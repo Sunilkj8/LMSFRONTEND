@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarina&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,500;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@185&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+}
+
+.bannerContainer {
+  /* background-color: #07080848; */
+  background-color: rgba(93, 89, 89, 0.11);
+}
+
+.doubleQuotes {
+  font-family: "Sarina", cursive;
+}
+
+.card-component:hover p {
+  bottom: -200px;
+  background-color: black;
+  color: #f2f2f2ca;
+}
+
+.features-container:hover .features-text-container {
+  bottom: 0;
+  /* background-color: #9b6bdfec; */
+}
+.booksImageContainer {
+  background-image: url("src/assets/book-library-with-open-textbook.jpg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.wixui_rich_text {
+  font-family: "Wix Madefor Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.accordion-transition {
+  transition: all 0.3s ease 30ms;
+}
+.accordion-transition:hover {
+  scale: 1.02;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.fictionalBookContainer .visitBookContent {
+  transition: all 0.3s;
+}
+
+.fictionalBookContainer:hover .visitBookContent {
+  transform: translateY(0);
+  background-color: rgb(255 255 255 / 69%);
+}
+
+.popUpDivCover {
+  background-color: #8080808e;
+}
+
+.stop-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.blurBG {
+  background-color: #000000b5;
+}
+
+.size-4{
+  width: 25px;
+  height: 25px;
+  /* padding: ; */
+}
