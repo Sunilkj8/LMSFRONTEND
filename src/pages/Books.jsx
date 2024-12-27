@@ -53,7 +53,7 @@ const Books = () => {
         {/* Fictional Fictional Books */}
         <FictionalBooks fictionalBooks={fictionalBooks} />
         {/* Self Help books   */}
-        <SelfHelpBooks selfHelpBooks={selfHelpBooks} />
+        {/* <SelfHelpBooks selfHelpBooks={selfHelpBooks} /> */}
       </div>
     </>
   );

@@ -70,6 +70,7 @@ body {
 
 .popUpDivCover {
   background-color: #8080808e;
+  /* position: fixed; */
 }
 
 .stop-scroll {
