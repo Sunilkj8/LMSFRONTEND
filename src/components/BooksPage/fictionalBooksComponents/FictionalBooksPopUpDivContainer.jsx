@@ -28,7 +28,7 @@ const FictionalBooksPopUpDivContainer = ({
         </svg>
       </div>
       <div>
-        <div className="absolute left-[2vw] top-[10vh] h-[80%] flex justify-center p-[50px]   w-[50%]">
+        <div className="absolute left-[2vw] top-[10vh] h-[80%] flex justify-center p-[50px]   w-[38%]">
           <img
             className="shadow-2xl"
             src={selectedBook ? selectedBook.book_image : ""}

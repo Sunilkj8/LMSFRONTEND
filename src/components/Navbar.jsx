@@ -170,7 +170,7 @@ const Navbar = () => {
                   )}
                 </div>
                 {profileDropDown ? (
-                  <div className=" rounded-md flex items-center flex-col    bg-black text-white h-[31vh] absolute gap-2 top-16 w-[10rem] left-[84vw] p-2">
+                  <div className=" rounded-md flex items-center flex-col    bg-black text-white h-[25vh] absolute gap-2 top-16 w-[10rem] left-[84vw] p-2">
                     <h1 className="capitalize text-xl">{username}</h1>
                     <h1 className="capitalize text-base">
                       {" "}
@@ -184,7 +184,9 @@ const Navbar = () => {
                     <span
                       onClick={() => {
                         localStorage.removeItem("username");
-                        location.reload()
+                        localStorage.removeItem("user_id");
+
+                        location.reload();
                       }}
                       class="flex items-center gap-2 text-base  cursor-pointer transition-all duration-300 hover:text-red-500"
                     >
@@ -215,7 +217,6 @@ const Navbar = () => {
               <a
                 onClick={() => {
                   setLoginClickState(true);
-                  
                 }}
                 className="bg-black text-white p-2 cursor-pointer rounded-md hover:bg-gray-700 duration-300 w-[4vw] flex items-center justify-center"
               >

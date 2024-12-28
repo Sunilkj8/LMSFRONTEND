@@ -1,11 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
-
-const BorrowBookPopUp = ({ setBorrowBookPopUp,selectedBook }) => {
+import axios from "axios";
+const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
   const [issuedOn, setIssuedOn] = useState({ date: "", month: "", year: "" });
   const [returnOn, setReturnOn] = useState({ date: "", month: "", year: "" });
   const [remainingDays, setRemainingDays] = useState("");
   const [issueVal, setIssueVal] = useState("");
   const [returnVal, setReturnVal] = useState("");
+  console.log(returnVal);
+
+  async function insertBorrowedBooks() {
+    const data = {
+      selectedBook,
+      user_id: localStorage.getItem("user_id"),
+      returnVal,
+    };
+    axios.post("http://localhost:3001/borrowedbooks", data);
+  }
+
   function daysInMonth(month) {
     console.log("month is : ", month);
 
@@ -98,8 +109,6 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp,selectedBook }) => {
 
   const issuedOnRef = useRef();
   const returnOnRef = useRef();
-  console.log(issuedOn);
-  console.log(returnOn);
 
   // calcMonthDays();
 
@@ -157,7 +166,12 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp,selectedBook }) => {
         <div className="text-center text-red-400 capitalize">
           The Book Can Be issued for maximum 30 days.
         </div>
-        <div className="bg-black text-white p-2 cursor-pointer rounded-md">Issue</div>
+        <div
+          onClick={insertBorrowedBooks}
+          className="bg-black text-white p-2 cursor-pointer rounded-md"
+        >
+          Issue
+        </div>
       </div>
     </div>
   );

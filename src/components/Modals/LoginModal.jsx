@@ -17,8 +17,9 @@ const LoginModal = () => {
     if (e.target.textContent == "Login") {
       const res = await axios.post("http://localhost:3002/signin", loginInfo);
       console.log(res.data);
+      localStorage.setItem("user_id", res.data.user_id);
       const userNameResponse = await axios.get("http://localhost:3002/me", {
-        headers: { token: res.data },
+        headers: { token: res.data.token },
       });
       console.log(userNameResponse.data.username);
       localStorage.setItem("username", userNameResponse.data.username);
