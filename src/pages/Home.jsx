@@ -10,7 +10,8 @@ import Lenis from "lenis";
 import LoginModal from "../components/Modals/LoginModal";
 import { IsLoginClicked } from "../contexts/LoginContext";
 import { Carousel } from "flowbite";
- 
+import Quotes from "../components/Landing page/Quotes";
+
 const Home = () => {
   // useEffect(() => {
   //   const lenis = new Lenis();
@@ -30,9 +31,11 @@ const Home = () => {
 
       <Banner />
       <Features />
-       <InspiringBook />
+      <InspiringBook />
       <DiscoverLIbrary />
-      {/* <Footer /> */}
+      <Quotes/>
+
+      <Footer />
     </>
   );
 };

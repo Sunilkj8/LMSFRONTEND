@@ -8,7 +8,7 @@ const InspiringBook = () => {
     <div className="h-[200vh] mt-[10vh] p-10  mb-10 ">
       <span className="flex  p-10 text-4xl">Books</span>
       <CurrentBooksContainer
-        border={false}
+        border={true}
         currentBooks={
           useContext(BooksRenderContext).inspiringBook.inspiringBooks
         }
