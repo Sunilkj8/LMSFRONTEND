@@ -34,13 +34,13 @@ const Navbar = () => {
     <>
       {" "}
       <div
-        className={`max-w-screen-2xl container mx-auto md:px-20 px-4 fixed text-black    top-0 left-0 right-0 z-20 font-medium ${
+        className={` max-w-screen-2xl container mx-auto md:px-20 px-4 fixed text-black top-0 left-0 right-0 z-50 font-medium ${
           sticky
             ? "sticky shadow-md bg-gray-100 duration-300 transition-all ease-in-out z-20"
             : ""
         }`}
       >
-        <div className="navbar  ">
+        <div className="navbar   ">
           <div className="navbar-start">
             <div className="dropdown">
               <div

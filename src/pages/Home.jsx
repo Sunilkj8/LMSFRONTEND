@@ -9,7 +9,8 @@ import Footer from "../components/Landing page/Footer";
 import Lenis from "lenis";
 import LoginModal from "../components/Modals/LoginModal";
 import { IsLoginClicked } from "../contexts/LoginContext";
-
+import { Carousel } from "flowbite";
+ 
 const Home = () => {
   // useEffect(() => {
   //   const lenis = new Lenis();
@@ -26,12 +27,12 @@ const Home = () => {
   return (
     <>
       {/* <LoginModal /> */}
-       
+
       <Banner />
-      <InspiringBook />
       <Features />
+       <InspiringBook />
       <DiscoverLIbrary />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

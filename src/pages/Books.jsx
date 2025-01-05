@@ -1,59 +1,65 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import StaticNavbar from "../components/StaticNavbar";
-import FictionalBooks from "../components/BooksPage/FictionalBooks";
-import SelfHelpBooks from "../components/BooksPage/SelfHelpBooks";
-import LoginModal from "../components/Modals/LoginModal";
 import { IsLoginClicked } from "../contexts/LoginContext";
+import CurrentBooksContainer from "../components/BooksPage/CurrentBooksContainer";
+import Accordion from "../components/BooksPage/Accordion";
+import { Link } from "react-router-dom";
+import { BooksRenderContext } from "../contexts/BooksRenderContext";
 const Books = () => {
-  const [featuredBooks, setFeaturedBooks] = useState([]);
-  const [fictionalBooks, setFictionalBooks] = useState([]);
-  const [selfHelpBooks, setSelfHelpBooks] = useState([]);
+  // const [fictionalBooks, setFictionalBooks] = useState([]);
+  // const [selfHelpBooks, setSelfHelpBooks] = useState([]);
+  // const [currentBooks, setCurrentBooks] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState("Fictional");
   const getFictionalBooks = async () => {
     const res = await axios.get("http://localhost:3001/fictionalbooks");
     setFictionalBooks(res.data);
+    setCurrentBooks(res.data);
   };
-  console.log(fictionalBooks);
-
-  const getFeaturedBooks = async () => {
-    const res = await axios.get("http://localhost:3001/featuredbooks");
-    // console.log(res.data);
-    setFeaturedBooks(res.data);
-  };
-  console.log(featuredBooks);
+  // console.log(fictionalBooks);
 
   const getSelfHelpBooks = async () => {
     const res = await axios.get("http://localhost:3001/selfhelpbooks");
     setSelfHelpBooks(res.data);
   };
 
-  useEffect(() => {
-    // getFeaturedBooks();
-    getFictionalBooks();
-    getSelfHelpBooks();
-  }, []);
+  // useEffect(() => {
+  //   // getFeaturedBooks();
+  //   getFictionalBooks();
+  //   getSelfHelpBooks();
+  // }, []);
 
-  const { loginClickState, setLoginClickState } = useContext(IsLoginClicked);
-  console.log(loginClickState);
+  // const { loginClickState, setLoginClickState } = useContext(IsLoginClicked);
+  // console.log(loginClickState);
+  const { fictionalBook, selfHelpBook, currentBook } =
+    useContext(BooksRenderContext);
+ 
+  function getCurrentBooks(books) {
+    console.log(books);
+
+    if (books == "Fictional") {
+      currentBook.setCurrentBooks(fictionalBook.fictionalBooks);
+      setCurrentCategory("Fictional");
+    } else if (books == "Self Help") {
+      currentBook.setCurrentBooks(selfHelpBook.selfHelpBooks);
+      setCurrentCategory("Self Help");
+    }
+  }
+  // getCurrentBooks()
+  // console.log(useContext(BooksRenderContext));
 
   return (
     <>
-      {/* Banner image */}
-      <div className="flex h-[88vh] w-[99vw] justify-center ">
-        <div className="booksImageContainer rounded-lg h-[70vh] w-[95vw] flex text-center items-center justify-start ">
-          <div className="justify-center    text-black   font-extrabold   h-full flex items-center w-full  ">
-            <h1 className="uppercase text-9xl  tracking-widest">
-              Explore Books
-            </h1>
-          </div>
-        </div>
+      <div className="border-t-2 mt-[10vh] border-b-2 h-[10vh] flex items-center px-32">
+        <Link to={"/"} className="hover:text-red-400 cursor-pointer">
+          Home
+        </Link>{" "}
+        <span className="ml-2"> > {currentCategory} </span>
       </div>
-
-      <div className="flex w-full h-full flex-col gap-6 pb-32">
-        {/* Fictional Fictional Books */}
-        <FictionalBooks fictionalBooks={fictionalBooks} />
-        {/* Self Help books   */}
-        {/* <SelfHelpBooks selfHelpBooks={selfHelpBooks} /> */}
+      <div className=" flex h-auto mt-[5vh] w-[99vw]    px-[3vw] py-[7vh] gap-10">
+        <Accordion getCurrentBooks={getCurrentBooks} />
+        <div className="h-[200vh] w-[70%] p-3">
+          <CurrentBooksContainer border={true} currentBooks={currentBook.currentBooks} />
+        </div>
       </div>
     </>
   );

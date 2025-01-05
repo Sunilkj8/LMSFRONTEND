@@ -1,112 +1,138 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { Carousel, IconButton } from "@material-tailwind/react";
+import { BooksRenderContext } from "../../contexts/BooksRenderContext";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { Link } from "react-router-dom";
 const DiscoverLIbrary = () => {
-  const [BOOKS, setBOOKS] = useState([]);
-
-  async function getKidsBookData() {
-    try {
-      const response = await axios.get("http://localhost:3001");
-      // console.log(response.data);
-      setBOOKS(response.data);
-    } catch (error) {
-      console.error("Error fetching Book Data");
-    }
-   
-  }
-
-  useEffect(() => {
-    getKidsBookData();
-  }, []);
+  useEffect(() => {}, []);
 
   //   console.log(BOOKS[0].book_image);
+  const { fictionalBook, selfHelpBook, currentBook } =
+    useContext(BooksRenderContext);
 
   return (
     <>
-      <div className="">
-        {" "}
-        {/* <div className="w-full flex h-auto  justify-center">
-          <h1 className="text-6xl uppercase mt-28">Discover Library</h1>
-        </div> */}
-        <div className="carousel w-full h-[70vh]  ">
-          <div id="slide1" className="carousel-item relative w-full ">
-            <div className="flex h-full w-full items-center justify-between mx-72">
-              <div className="relative card-component   overflow-hidden z-10">
-                {" "}
-                <img
-                  src={BOOKS.length > 0 ? BOOKS[4].book_image : null}
-                  className="h-[40vh]"
-                />
-               
-              </div>
-              <div className="relative card-component border-2 overflow-hidden z-10">
-                {" "}
-                <img
-                  src={BOOKS.length > 0 ? BOOKS[3].book_image : null}
-                  className="h-[40vh]"
-                />
-            
-              </div>
-              <div className="relative card-component border-2 overflow-hidden z-10">
-                {" "}
-                <img
-                  src={BOOKS.length > 0 ? BOOKS[5].book_image : null}
-                  className="h-[40vh]"
-                />
-              
-              </div>
-              
-            </div>
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide2" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide2" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
-          <div
-            id="slide2"
-            className="carousel-item relative w-full transition-all duration-300  ease-in-out "
-          >
-            <div className="flex h-full w-full items-center justify-between mx-72">
-              <div className="relative card-component border-2 overflow-hidden z-10">
-                {" "}
-                <img
-                  src={BOOKS.length > 0 ? BOOKS[2].book_image : null}
-                  className="h-[40vh]"
-                />
-              
-              </div>
-              <div className="relative card-component border-2 overflow-hidden z-10">
-                {" "}
-                <img
-                  src={BOOKS.length > 0 ? BOOKS[7].book_image : null}
-                  className="h-[40vh]"
-                />
-             
-              </div>
-              <div className="relative card-component border-2 overflow-hidden z-10">
-                {" "}
-                <img
-                  src={BOOKS.length > 0 ? BOOKS[6].book_image : null}
-                  className="h-[40vh]"
-                />
-              
-              </div>
-              
-            </div>
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide1" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide1" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
-        </div>
+      <div className="bg-[#FFF6F6] w-full flex justify-between px-[9vw] py-10 text-4xl  ">
+        <span className="tracking-wide z-20 ">Discover By Category</span>
+        <Link to={"/books"} className="flex font-thin text-xl font-[monospace] z-20 items-center cursor-pointer text-gray-600">
+          Visit All
+          <BiChevronRight />
+        </Link>
       </div>
+      <Carousel
+        loop="true"
+        autoplay="true"
+        autoplayDelay={"10000"}
+        className="   flex bottom-[20vh] h-screen w-[99vw] bg-[#FFF6F6]"
+        prevArrow={({ handlePrev }) => (
+          <IconButton
+            variant="text"
+            color="gray"
+            size="lg"
+            onClick={handlePrev}
+            className="!absolute top-2/4 left-4 -translate-y-2/4"
+          >
+            {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="square"
+              strokeLinejoin="square"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg> */}
+            <div className="text-4xl   hover:border-none hover:bg-black duration-150 p-2 ">
+              {" "}
+              {<BiChevronLeft color="gray" />}{" "}
+            </div>
+          </IconButton>
+        )}
+        nextArrow={({ handleNext }) => (
+          <IconButton
+            variant="text"
+            color="white"
+            size="lg"
+            onClick={handleNext}
+            className="!absolute top-2/4 !right-4 -translate-y-2/4"
+          >
+            {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg> */}
+            <div className="text-4xl hover:border-none hover:bg-black duration-150 p-2 ">
+              {" "}
+              {<BiChevronRight color="gray" />}{" "}
+            </div>
+          </IconButton>
+        )}
+      >
+        <div className="h-full  w-full flex p-10 justify-center items-center ">
+          {selfHelpBook.selfHelpBooks.map((elem, idx) => {
+            if (idx == 0 || idx == 6)
+              return (
+                <div className=" bg-white  cursor-pointer    w-[45%] flex items-center  p-5 h-[65%]    overflow-hidden border justify-between hover:shadow-lg hover:scale-[1.01] duration-150  ease-linear ">
+                  <div className=" w-[70%] flex h-[100%]  rounded-lg items-center p-3 ">
+                    <img
+                      src={elem.book_image}
+                      className="w-[85%] h-[100%] rounded-sm shadow-xl"
+                      alt=""
+                    />
+                  </div>
+                  {/* <div className="text-red-500 font-extrabold  uppercase absolute bottom-[-1000px] ">Paperback</div> */}
+                  <div className=" h-full w-full flex py-10   flex-col gap-10">
+                    <div className="font-normal text-2xl ">
+                      {elem.book_name}
+                    </div>
+                    <div className="text-lg text-gray-500">
+                      {elem.book_author}
+                    </div>
+                  </div>
+                </div>
+              );
+          })}
+        </div>
+        <div className="h-full  w-full flex p-10 justify-center items-center ">
+          {fictionalBook.fictionalBooks.map((elem, idx) => {
+            if (idx == 2 || idx == 3)
+              return (
+                <div className=" bg-white  cursor-pointer    w-[45%] flex items-center  p-5 h-[65%]    overflow-hidden border justify-between hover:shadow-lg hover:scale-[1.01] duration-150  ease-linear ">
+                  <div className=" w-[70%] flex h-[100%]  rounded-lg items-center p-3 ">
+                    <img
+                      src={elem.book_image}
+                      className="w-[85%] h-[100%] rounded-sm shadow-xl"
+                      alt=""
+                    />
+                  </div>
+                  {/* <div className="text-red-500 font-extrabold  uppercase absolute bottom-[-1000px] ">Paperback</div> */}
+                  <div className=" h-full w-full flex py-10   flex-col gap-10">
+                    <div className="font-normal text-2xl ">
+                      {elem.book_name}
+                    </div>
+                    <div className="text-lg text-gray-500">
+                      {elem.book_author}
+                    </div>
+                  </div>
+                </div>
+              );
+          })}
+        </div>
+      </Carousel>
     </>
   );
 };

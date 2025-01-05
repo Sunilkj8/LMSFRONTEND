@@ -20,11 +20,11 @@ const FictionalBooks = ({ fictionalBooks }) => {
   // }, []);
   return (
     <>
-      <FictionalAccordion show={show} setShow={setShow} />
-      {show && (
-        <div className={`h-auto flex items-center justify-center relative    `}>
-          <div className="h-full w-[95vw] bg-[#0E345A] rounded-xl flex justify center items-center flex-col py-10 ">
-            <FictionalHeading />
+      {/* <FictionalAccordion show={show} setShow={setShow} /> */}
+      
+        <div className={`h-auto flex items-center justify-center relative   left-[25vw] w-[74%]  `}>
+          <div className="h-full w-[95vw] bg-[] text-black rounded-xl flex justify center items-center flex-col py-10 ">
+            {/* <FictionalHeading /> */}
 
             <FictionalBooksRender
               fictionalBooks={fictionalBooks}
@@ -32,11 +32,11 @@ const FictionalBooks = ({ fictionalBooks }) => {
               setPopUpDiv={setPopUpDiv}
             />
           </div>
-          <div
+          {/* <div
             className={`${
               popUpDiv ? "blurBG" : "hidden"
             }  h-full w-full  fixed top-0`}
-          ></div>
+          ></div> */}
 
           <FictionalBooksPopUpDivContainer
             setPopUpDiv={setPopUpDiv}
@@ -53,7 +53,7 @@ const FictionalBooks = ({ fictionalBooks }) => {
             ""
           )}
         </div>
-      )}
+      
       {/* fictional container */}
     </>
   );

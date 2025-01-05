@@ -89,8 +89,15 @@ body {
   background-color: #000000b5;
 }
 
-.size-4{
+.size-4 {
   width: 25px;
   height: 25px;
   /* padding: ; */
+}
+.card-hover-transition{
+  transition: all   70ms ease-in-out;
+}
+.card-hover-transition:hover {
+  border:1px solid black;
+  scale: 1.05;
 }

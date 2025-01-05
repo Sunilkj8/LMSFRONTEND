@@ -8,8 +8,8 @@ const FictionalBooksPopUpDivContainer = ({
 }) => {
   return (
     <div
-      className={`fixed h-[93%] w-[75vw] bg-[white] rounded-md    justify center items-center flex-col top-0 left-[12vw] py-20 duration-300 transition-all ease-in-out z-50    ${
-        popUpDiv ? "flex bg-white scale-75" : "scale-0 "
+      className={`fixed h-[93%] w-[75vw]  text-white rounded-md    justify center items-center flex-col top-0 left-[12vw] py-20 duration-300 transition-all ease-in-out z-50    ${
+        popUpDiv ? "flex bg-black scale-75" : "scale-0 "
       } `}
     >
       <div
@@ -17,12 +17,14 @@ const FictionalBooksPopUpDivContainer = ({
         onClick={() => {
           setPopUpDiv(false);
           document.body.style.overflowY = "scroll";
+          document.body.style.backgroundColor=''
+
         }}
       >
         <svg width="40" height="40" viewbox="0 0 40 40">
           <path
             d="M 10,10 L 30,30 M 30,10 L 10,30"
-            stroke="black"
+            stroke="white"
             stroke-width="4"
           />
         </svg>
@@ -52,7 +54,7 @@ const FictionalBooksPopUpDivContainer = ({
             </p>
           </div>
           <div
-            className="bg-black p-4 rounded-lg text-white font-mono text-2xl uppercase cursor-pointer"
+            className="bg-white p-4 rounded-lg text-black font-mono text-2xl uppercase cursor-pointer"
             onClick={() => {
               setBorrowBookPopUp(true);
               document.body.style.overflowY = "hidden";
