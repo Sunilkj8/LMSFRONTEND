@@ -69,7 +69,7 @@ body {
 }
 
 .popUpDivCover {
-  background-color: #8080808e;
+  background-color: rgba(0, 0, 0, 0.582);
   /* position: fixed; */
 }
 
@@ -101,3 +101,5 @@ body {
   border:1px solid black;
   scale: 1.05;
 }
+
+

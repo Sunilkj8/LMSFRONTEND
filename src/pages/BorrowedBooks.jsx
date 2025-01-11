@@ -1,28 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BorrowedBooksContainer from "../components/BorrowedBooksPage/BorrowedBooksContainer";
 import axios from "axios";
+import { BooksRenderContext } from "../contexts/BooksRenderContext";
 
 const BorrowedBooks = () => {
-  const [userBorrowedBooks, setUserBorrowedBooks] = useState([]);
-  async function getUserBorrowedBooks() {
-    const user_id = localStorage.getItem("user_id");
-    const res = await axios.post("http://localhost:3001/getborrowedbooks", {
-      user_id: user_id,
-    });
+  // const [userBorrowedBooks, setUserBorrowedBooks] = useState([]);
 
-    // console.log(res.data);
-    // gives an array of objects...
-    setUserBorrowedBooks(res.data);
-  }
-  console.log(userBorrowedBooks);
-
-  useEffect(() => {
-    getUserBorrowedBooks();
-  }, []);
+  // console.log(userBorrowedBooks);
+  const { borrowedBooks, setBorrowedBooks } =
+    useContext(BooksRenderContext).borrowedBook;
 
   return (
     <>
-      <BorrowedBooksContainer userBorrowedBooks={userBorrowedBooks} />
+      <BorrowedBooksContainer userBorrowedBooks={borrowedBooks} />
     </>
   );
 };

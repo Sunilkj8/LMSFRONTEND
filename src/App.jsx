@@ -10,10 +10,12 @@ import { BooksRenderContext } from "./contexts/BooksRenderContext";
 import axios from "axios";
 
 const App = () => {
+  const [selectedBook, setSelectedBook] = useState([]);
   const [fictionalBooks, setFictionalBooks] = useState([]);
   const [selfHelpBooks, setSelfHelpBooks] = useState([]);
   const [currentBooks, setCurrentBooks] = useState([]);
   const [inspiringBooks, setInspiringBooks] = useState([]);
+  const [borrowedBooks, setBorrowedBooks] = useState([]);
   // const [currentCategory, setCurrentCategory] = useState("Fictional");
 
   const getFictionalBooks = async () => {
@@ -32,11 +34,24 @@ const App = () => {
     console.log(res.data);
     setInspiringBooks(res.data);
   };
+
+  async function getUserBorrowedBooks() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await axios.post("http://localhost:3001/getborrowedbooks", {
+      user_id: user_id,
+    });
+
+    // console.log(res.data);
+    // gives an array of objects...
+    // setUserBorrowedBooks(res.data);
+    setBorrowedBooks(res.data);
+  }
   useEffect(() => {
     // getFeaturedBooks();
     getFictionalBooks();
     getSelfHelpBooks();
     getInspiringBooks();
+    getUserBorrowedBooks();
   }, []);
 
   const router = createBrowserRouter([
@@ -55,10 +70,12 @@ const App = () => {
   return (
     <BooksRenderContext.Provider
       value={{
+        selectedBook: { selectedBook, setSelectedBook },
         fictionalBook: { fictionalBooks, setFictionalBooks },
         selfHelpBook: { selfHelpBooks, setSelfHelpBooks },
         currentBook: { currentBooks, setCurrentBooks },
         inspiringBook: { inspiringBooks, setInspiringBooks },
+        borrowedBook: { borrowedBooks, setBorrowedBooks },
       }}
     >
       <IsLoginClicked.Provider value={{ loginClickState, setLoginClickState }}>

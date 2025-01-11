@@ -1,11 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
+import { Bounce, toast } from "react-toastify";
+import { Navigate, useNavigate } from "react-router-dom";
 const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
   const [issuedOn, setIssuedOn] = useState({ date: "", month: "", year: "" });
   const [returnOn, setReturnOn] = useState({ date: "", month: "", year: "" });
   const [remainingDays, setRemainingDays] = useState("");
   const [issueVal, setIssueVal] = useState("");
   const [returnVal, setReturnVal] = useState("");
+  const navigate = useNavigate();
   console.log(returnVal);
 
   async function insertBorrowedBooks() {
@@ -14,7 +17,29 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
       user_id: localStorage.getItem("user_id"),
       returnVal,
     };
-    axios.post("http://localhost:3001/borrowedbooks", data);
+    const res = await axios.post("http://localhost:3001/borrowedbooks", data);
+    // console.log(res.data);
+    // console.log(res.data);
+
+    if (res.data === "THE BOOK IS ALREADY BORROWED") {
+      toast.error(res.data, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    } else {
+      // location.reload();
+      toast.success(res.data);
+
+      // location.reload();
+      // navigate("/borrowedbooks");
+    }
   }
 
   function daysInMonth(month) {
@@ -113,7 +138,7 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
   // calcMonthDays();
 
   return (
-    <div className="fixed top-[11vh] h-[70%] w-[28vw] bg-[white] rounded-md    justify center items-center flex-col py-20 duration-300 transition-all ease-in-out z-50 border-2 px-20">
+    <div className="fixed left-[50vw] top-[20vh] h-[70%] w-[28vw] bg-[white] rounded-md    justify center items-center flex-col py-20 duration-300 transition-all ease-in-out z-50 border-2 px-20">
       <div
         className="absolute left-[24vw] top-[3vh] font-extralight  cursor-pointer"
         onClick={() => {
@@ -163,8 +188,8 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
           />
         </div>
         {remainingDays}
-        <div className="text-center text-red-400 capitalize">
-          The Book Can Be issued for maximum 30 days.
+        <div className="text-center text-red-400 ">
+          The Book can be issued for a  maximum of 30 days.
         </div>
         <div
           onClick={insertBorrowedBooks}

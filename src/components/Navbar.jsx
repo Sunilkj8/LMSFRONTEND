@@ -170,7 +170,7 @@ const Navbar = () => {
                   )}
                 </div>
                 {profileDropDown ? (
-                  <div className=" rounded-md flex items-center flex-col    bg-black text-white h-[25vh] absolute gap-2 top-16 w-[10rem] left-[84vw] p-2">
+                  <div className=" rounded-md flex items-center flex-col    bg-black text-white h-[25vh] absolute gap-2 top-16 w-[10rem] left-[71vw] p-2">
                     <h1 className="capitalize text-xl">{username}</h1>
                     <h1 className="capitalize text-base">
                       {" "}

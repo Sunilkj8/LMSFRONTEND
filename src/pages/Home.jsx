@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Banner from "../components/Landing page/Banner";
 import InspiringBook from "../components/Landing page/InspiringBook";
 import { useEffect } from "react";
@@ -11,6 +11,7 @@ import LoginModal from "../components/Modals/LoginModal";
 import { IsLoginClicked } from "../contexts/LoginContext";
 import { Carousel } from "flowbite";
 import Quotes from "../components/Landing page/Quotes";
+import BookPopUp from "../components/Modals/BookPopUp";
 
 const Home = () => {
   // useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
   //   }
   //   requestAnimationFrame(raf);
   // });
+  const [popUpState, setPopUpState] = useState(false);
 
   const { loginClickState, setLoginClickState } = useContext(IsLoginClicked);
   console.log(loginClickState);
@@ -28,12 +30,25 @@ const Home = () => {
   return (
     <>
       {/* <LoginModal /> */}
-
+      {popUpState ? (
+        <div className="fixed h-screen w-[99vw] popUpDivCover"></div>
+      ) : (
+        ""
+      )}
+      <BookPopUp
+        translateX={"16vw"}
+        setPopUpState={setPopUpState}
+        popUpState={popUpState}
+      />
       <Banner />
       <Features />
-      <InspiringBook />
+      <InspiringBook
+        booksToRender={18}
+        setPopUpState={setPopUpState}
+        popUpState={popUpState}
+      />
       <DiscoverLIbrary />
-      <Quotes/>
+      <Quotes />
 
       <Footer />
     </>
