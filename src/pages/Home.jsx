@@ -6,14 +6,12 @@ import { useEffect } from "react";
 import Features from "../components/Landing page/Features";
 import DiscoverLIbrary from "../components/Landing page/DiscoverLIbrary";
 import Footer from "../components/Landing page/Footer";
-import Lenis from "lenis";
-import LoginModal from "../components/Modals/LoginModal";
 import { IsLoginClicked } from "../contexts/LoginContext";
-import { Carousel } from "flowbite";
 import Quotes from "../components/Landing page/Quotes";
 import BookPopUp from "../components/Modals/BookPopUp";
 
 const Home = () => {
+  
   // useEffect(() => {
   //   const lenis = new Lenis();
   //   function raf(time) {
@@ -49,6 +47,7 @@ const Home = () => {
       />
       <DiscoverLIbrary />
       <Quotes />
+
 
       <Footer />
     </>

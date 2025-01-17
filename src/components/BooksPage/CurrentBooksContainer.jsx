@@ -17,7 +17,7 @@ const CurrentBooksContainer = ({
   // console.log(typeof(selectedBook));// It is an object
 
   return (
-    <div className="h-auto w-full   justify-center gap-1    flex flex-wrap  ">
+    <div className="h-auto w-full   justify-center gap-3    flex flex-wrap  ">
       {currentBooks.map((elem, idx) => {
         return(idx < booksToRender ?  
         <div
@@ -27,8 +27,8 @@ const CurrentBooksContainer = ({
             document.body.style.overflowY = "hidden";
           }}
           className={` ${
-            border ? "border" : ""
-          }  cursor-pointer    w-[15vw] flex items-center gap-10 p-3 h-[55vh] flex-col montserrat-font   card-hover-transition   relative   overflow-hidden `}
+            border ? " " : ""
+          }  shadow-blue-gray-50 shadow-md rounded-lg cursor-pointer    w-[15vw] flex items-center gap-10 p-3 h-[55vh] flex-col montserrat-font   card-hover-transition   relative   overflow-hidden `}
         >
           <div className="justify-center w-[80%] flex h-[60%]  rounded-lg items-center p-3">
             <img

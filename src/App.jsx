@@ -16,6 +16,7 @@ const App = () => {
   const [currentBooks, setCurrentBooks] = useState([]);
   const [inspiringBooks, setInspiringBooks] = useState([]);
   const [borrowedBooks, setBorrowedBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);
   // const [currentCategory, setCurrentCategory] = useState("Fictional");
 
   const getFictionalBooks = async () => {
@@ -76,6 +77,7 @@ const App = () => {
         currentBook: { currentBooks, setCurrentBooks },
         inspiringBook: { inspiringBooks, setInspiringBooks },
         borrowedBook: { borrowedBooks, setBorrowedBooks },
+        filteredBook: { filteredBooks, setFilteredBooks },
       }}
     >
       <IsLoginClicked.Provider value={{ loginClickState, setLoginClickState }}>

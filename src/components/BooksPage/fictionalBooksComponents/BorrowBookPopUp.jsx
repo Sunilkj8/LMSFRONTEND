@@ -2,7 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router-dom";
-const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
+const BorrowBookPopUp = ({
+  setBorrowBookPopUp,
+  selectedBook,
+  setPopUpState,
+}) => {
   const [issuedOn, setIssuedOn] = useState({ date: "", month: "", year: "" });
   const [returnOn, setReturnOn] = useState({ date: "", month: "", year: "" });
   const [remainingDays, setRemainingDays] = useState("");
@@ -21,7 +25,7 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
     // console.log(res.data);
     // console.log(res.data);
 
-    if (res.data === "THE BOOK IS ALREADY BORROWED") {
+    if (res.data === "The Book Is Already Borrowed") {
       toast.error(res.data, {
         position: "top-right",
         autoClose: 5000,
@@ -40,6 +44,10 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
       // location.reload();
       // navigate("/borrowedbooks");
     }
+    setBorrowBookPopUp(false);
+    setPopUpState(false);
+    document.body.style.overflowY = "scroll";
+    document.body.style.backgroundColor = "";
   }
 
   function daysInMonth(month) {
@@ -189,7 +197,7 @@ const BorrowBookPopUp = ({ setBorrowBookPopUp, selectedBook }) => {
         </div>
         {remainingDays}
         <div className="text-center text-red-400 ">
-          The Book can be issued for a  maximum of 30 days.
+          The Book can be issued for a maximum of 30 days.
         </div>
         <div
           onClick={insertBorrowedBooks}

@@ -69,8 +69,11 @@ body {
 }
 
 .popUpDivCover {
-  background-color: rgba(0, 0, 0, 0.582);
+  /* background-color: rgba(0, 0, 0, 0.582); */
+
   /* position: fixed; */
+  background-color: rgba(255, 255, 255, 0.548);
+  z-index: 1;
 }
 
 .stop-scroll {
@@ -98,8 +101,8 @@ body {
   transition: all   70ms ease-in-out;
 }
 .card-hover-transition:hover {
-  border:1px solid black;
-  scale: 1.05;
+  border:1px solid gray;
+  scale: 1.09;
 }
 
 

@@ -3,12 +3,24 @@ import { NavLink } from "react-router-dom";
 import { IsLoginClicked } from "../contexts/LoginContext";
 import { getLocalUsername } from "../helperFunctions/localstorage";
 import userProfileIcon from "../assets/profile-user.png";
-const Navbar = () => {
+const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
   const [sticky, setSticky] = useState(false);
   const username = getLocalUsername();
   const [profileDropDown, setProfileDropDown] = useState(false);
+  const [currSearch, setCurrSearch] = useState("");
   // const profileDropDownREF = useRef();
   // console.log(username);
+  // console.log(currSearch);
+
+  function getFilteredBooks() {
+    setCurrentBooks(
+      inspiringBooks.filter((book) => {
+        return book.book_name.toLowerCase().includes(currSearch.toLowerCase());
+      })
+    );
+  }
+  // console.log(filteredBooks);
+  // setFilteredBooks(filteredBooks);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,8 +35,11 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  //  console.log(sticky);
-  //  console.log(useContext(IsLoginClicked));
+
+  useEffect(() => {
+    getFilteredBooks();
+  }, [currSearch]);
+ 
 
   const { loginClickState, setLoginClickState } = useContext(IsLoginClicked);
 
@@ -91,11 +106,14 @@ const Navbar = () => {
                   <NavLink to={"/borrowedbooks"}>Borrowed Books</NavLink>
                 </li>
               </ul>
-              <label className=" input input-bordered flex items-center gap-2 bg-transparent mx-10">
+              <label className=" input input-bordered flex items-center gap-2 bg-transparent mx-10 outline-none ">
                 <input
                   type="text"
                   className="grow placeholder:text-black "
                   placeholder="Search"
+                  onChange={(e) => {
+                    setCurrSearch(e.target.value);
+                  }}
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

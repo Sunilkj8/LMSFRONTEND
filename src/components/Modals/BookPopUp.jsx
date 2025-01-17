@@ -8,14 +8,13 @@ const BookPopUp = ({ popUpState, setPopUpState, translateX }) => {
   const { borrowedBooks, setBorrowedBooks } =
     useContext(BooksRenderContext).borrowedBook;
   const [borrowBookPopUp, setBorrowBookPopUp] = useState(false);
-   // console.log(borrowedBooks);
- 
-    
+  // console.log(borrowedBooks);
 
   return (
     <>
       {borrowBookPopUp ? (
         <BorrowBookPopUp
+          setPopUpState={setPopUpState}
           selectedBook={selectedBook}
           setBorrowBookPopUp={setBorrowBookPopUp}
         />

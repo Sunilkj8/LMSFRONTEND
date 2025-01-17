@@ -9,8 +9,13 @@ import BookPopUp from "../components/Modals/BookPopUp";
 const Books = () => {
   const [currentCategory, setCurrentCategory] = useState("Fictional");
   const [popUpState, setPopUpState] = useState(false);
-  const { fictionalBook, selfHelpBook, currentBook } =
+  const { fictionalBook, selfHelpBook, currentBook, filteredBook } =
     useContext(BooksRenderContext);
+  const [currBooks, setCurrBooks] = useState([]);
+
+  // console.log(filteredBook.filteredBooks);
+  const { filteredBooks, setFilteredBooks } = filteredBook;
+  // console.log(currentBook.currentBooks);
 
   function getCurrentBooks(books) {
     console.log(books);
@@ -46,7 +51,7 @@ const Books = () => {
         <div className="h-[200vh] w-[70%] p-3">
           <BookPopUp popUpState={popUpState} setPopUpState={setPopUpState} />
           <CurrentBooksContainer
-           booksToRender={8}
+            booksToRender={8}
             setPopUpState={setPopUpState}
             border={true}
             currentBooks={currentBook.currentBooks}
