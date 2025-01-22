@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const Accordion = ({ getCurrentBooks }) => {
-  const [accordionOpen, setAccordionOpen] = useState(true);
+  const [accordionOpen, setAccordionOpen] = useState(false);
   return (
     <div
       className={`py-1 w-[25%] duration-300  ease-in-out transition-all flex flex-col   border-[1px]  px-3  overflow-hidden 
-        ${accordionOpen ? "h-[40vh]" : "h-[10vh]"} `}
+        ${accordionOpen ? "h-[60vh]" : "h-[10vh]"} `}
     >
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
@@ -43,6 +43,24 @@ const Accordion = ({ getCurrentBooks }) => {
           className="hover:text-red-500 cursor-pointer duration-200 text-gray-700"
         >
           Autobiography
+        </span>
+        <span
+          onClick={(e) => {
+            // console.log(e.target.textContent);
+            getCurrentBooks(e.target.textContent);
+          }}
+          className="hover:text-red-500 cursor-pointer duration-200 text-gray-700"
+        >
+          Comic
+        </span>
+        <span
+          onClick={(e) => {
+            // console.log(e.target.textContent);
+            getCurrentBooks(e.target.textContent);
+          }}
+          className="hover:text-red-500 cursor-pointer duration-200 text-gray-700"
+        >
+          Programming
         </span>
       </div>
     </div>

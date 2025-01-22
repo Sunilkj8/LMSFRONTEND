@@ -6,8 +6,9 @@ import Accordion from "../components/BooksPage/Accordion";
 import { Link } from "react-router-dom";
 import { BooksRenderContext } from "../contexts/BooksRenderContext";
 import BookPopUp from "../components/Modals/BookPopUp";
+import Footer from "../components/Landing page/Footer";
 const Books = () => {
-  const [currentCategory, setCurrentCategory] = useState("Fictional");
+  const [currentCategory, setCurrentCategory] = useState();
   const [popUpState, setPopUpState] = useState(false);
   const { fictionalBook, selfHelpBook, currentBook, filteredBook } =
     useContext(BooksRenderContext);
@@ -29,6 +30,10 @@ const Books = () => {
     }
   }
 
+   
+
+  
+
   return (
     <>
       {" "}
@@ -48,16 +53,18 @@ const Books = () => {
       </div>
       <div className=" flex h-auto mt-[5vh] w-[99vw]    px-[3vw] py-[7vh] gap-10">
         <Accordion getCurrentBooks={getCurrentBooks} />
-        <div className="h-[200vh] w-[70%] p-3">
+        <div className="h-auto w-[70%] p-3">
           <BookPopUp popUpState={popUpState} setPopUpState={setPopUpState} />
           <CurrentBooksContainer
-            booksToRender={8}
+            booksToRender={24}
             setPopUpState={setPopUpState}
             border={true}
             currentBooks={currentBook.currentBooks}
           />
+
         </div>
       </div>
+        <Footer/>
     </>
   );
 };

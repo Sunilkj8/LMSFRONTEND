@@ -23,6 +23,7 @@ const LoginModal = () => {
       });
       console.log(userNameResponse.data.username);
       localStorage.setItem("username", userNameResponse.data.username);
+      localStorage.setItem("usertype", res.data.usertype);
       location.reload();
     } else {
       const res = await axios.post("http://localhost:3002/signup", loginInfo);

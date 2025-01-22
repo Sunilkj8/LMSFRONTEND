@@ -1,10 +1,14 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { BooksRenderContext } from "../../contexts/BooksRenderContext";
 export function CarouselCustomArrows() {
   const [featuredBooks, setFeaturedBooks] = useState([]);
-
+  const navigate = useNavigate();
+  const { currentBooks, setCurrentBooks } =
+    useContext(BooksRenderContext).currentBook;
   const getFeaturedBooks = async () => {
     const res = await axios.get("http://localhost:3001/featuredbooks");
     // console.log(res.data);
@@ -44,7 +48,7 @@ export function CarouselCustomArrows() {
           </svg> */}
           <div className="text-4xl   hover:border-none hover:bg-black duration-150 p-2 ">
             {" "}
-            {<BiChevronLeft color="gray" />}{" "}
+            {/* {<BiChevronLeft color="gray" />}{" "} */}
           </div>
         </IconButton>
       )}
@@ -53,7 +57,7 @@ export function CarouselCustomArrows() {
           variant="text"
           color="white"
           size="lg"
-          onClick={handleNext}
+          // onClick={handleNext}
           className="!absolute top-2/4 !right-4 -translate-y-2/4"
         >
           {/* <svg
@@ -72,7 +76,7 @@ export function CarouselCustomArrows() {
           </svg> */}
           <div className="text-4xl hover:border-none hover:bg-black duration-150 p-2 ">
             {" "}
-            {<BiChevronRight color="gray" />}{" "}
+            {/* {<BiChevronRight color="gray" />}{" "} */}
           </div>
         </IconButton>
       )}
@@ -81,9 +85,13 @@ export function CarouselCustomArrows() {
         return (
           <div className="flex justify-center items-center h-full w-full ">
             <img
+              onClick={() => {
+                setCurrentBooks(featuredBooks);
+                navigate("/books");
+              }}
               src={elem.book_image}
               alt=""
-              className="shadow-xl h-[80%] rounded-sm"
+              className=" cursor-pointer shadow-xl h-[80%] rounded-sm"
             />
           </div>
         );

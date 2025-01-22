@@ -8,6 +8,8 @@ import BorrowedBooks from "./pages/BorrowedBooks";
 import { IsLoginClicked } from "./contexts/LoginContext";
 import { BooksRenderContext } from "./contexts/BooksRenderContext";
 import axios from "axios";
+import Admin from "./pages/Admin";
+import AdminHome from "./components/AdminPages/AdminHome";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
@@ -22,7 +24,6 @@ const App = () => {
   const getFictionalBooks = async () => {
     const res = await axios.get("http://localhost:3001/fictionalbooks");
     setFictionalBooks(res.data);
-    setCurrentBooks(res.data);
   };
 
   const getSelfHelpBooks = async () => {
@@ -34,6 +35,8 @@ const App = () => {
     const res = await axios.get("http://localhost:3001/inspiringbooks");
     console.log(res.data);
     setInspiringBooks(res.data);
+    setCurrentBooks(res.data);
+
   };
 
   async function getUserBorrowedBooks() {
@@ -56,16 +59,22 @@ const App = () => {
   }, []);
 
   const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <RootLayout />,
+    localStorage.getItem("usertype") != "admin"
+      ? {
+          path: "/",
+          element: <RootLayout />,
 
-      children: [
-        { index: true, element: <Home /> },
-        { path: "/books", element: <Books /> },
-        { path: "/borrowedbooks", element: <BorrowedBooks /> },
-      ],
-    },
+          children: [
+            { index: true, element: <Home /> },
+            { path: "/books", element: <Books /> },
+            { path: "/borrowedbooks", element: <BorrowedBooks /> },
+          ],
+        }
+      : {
+          path: "/",
+          element: <Admin />,
+          children: [{ index: true, element: <AdminHome /> }],
+        },
   ]);
   const [loginClickState, setLoginClickState] = useState(false);
   return (
