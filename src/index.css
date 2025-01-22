@@ -2,8 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarina&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,500;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@185&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@315&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@315&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -99,19 +98,26 @@ body {
   height: 25px;
   /* padding: ; */
 }
-.card-hover-transition{
-  transition: all   70ms ease-in-out;
+.card-hover-transition {
+  transition: all 70ms ease-in-out;
 }
 .card-hover-transition:hover {
-  border:1px solid gray;
+  border: 1px solid gray;
   scale: 1.09;
 }
 
 .smooch-sans-font {
   font-family: "Smooch Sans", serif;
   font-optical-sizing: auto;
-  font-weight:500;
+  font-weight: 500;
   font-style: normal;
 }
 
 
+
+.upliftDiv:hover .currUpliftDiv {
+  top: 20vh;
+}
+.currUpliftdiv:hover{
+  top: 20vh;
+}

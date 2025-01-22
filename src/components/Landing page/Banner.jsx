@@ -130,12 +130,12 @@ const Banner = () => {
             className="   left-0 bottom-0 flex   absolute h-[50%] w-auto"
           >
             <img
-              src={bannerImg7}
+              src={"https://m.media-amazon.com/images/I/41DmBeq8oIL._SY445_SX342_.jpg"}
               className="relative h-[80%] bottom-[15vh] left-24"
               alt=""
             />
             <img
-              src={bannerImg8}
+              src={"https://m.media-amazon.com/images/I/31QRYQI5TPL._SY445_SX342_.jpg"}
               className=" h-[80%] absolute bottom-[10vh]"
               alt=""
             />
