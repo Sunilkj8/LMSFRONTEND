@@ -5,8 +5,8 @@ import browseSearch from "../../assets/browseSearch.png";
 const Features = () => {
   return (
     <>
-      <div className="   flex items-center justify-center flex-col h-[100vh] w-full    relative  overflow-hidden blockElem    mt-5       ">
-        <div className=" shadow-2xl bg-[#f7f9eb46]       border-gray-400 w-full max-w-[87vw] flex justify-center    h-[90%] rounded-2xl ">
+      <div className="   flex items-center justify-center flex-col h-[90vh] w-full    relative  overflow-hidden blockElem    mt-5       ">
+        <div className=" shadow-2xl bg-[#f9f5e874]       border-gray-400 w-full max-w-[87vw] flex justify-center    h-[90%] rounded-2xl ">
           <div className="h-1/2 w-[80%] mt-28  flex items-center   justify-between flex-col gap-[8vh]   ">
             <div className="  text-4xl font-semibold tracking-wide">How it works?</div>
             <div className=" h-full w-full flex justify-center gap-[15vw] items-center" >

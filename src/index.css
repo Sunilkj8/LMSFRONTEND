@@ -132,13 +132,13 @@ body {
     opacity: 0;
     /* scale: 0.5; */
     /* clip-path: inset(100% 100% 0 0); */
-    transform: translateX(-100px);
+    transform: translateY(-20%);
   }
   to {
     opacity: 1;
     /* scale: 1; */
     clip-path: inset(0 0 0 0);
-    transform: translateX(0);
+    transform: translateY(0);
 
 
   }
