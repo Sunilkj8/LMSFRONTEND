@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,500;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@185&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@315&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -113,11 +114,38 @@ body {
   font-style: normal;
 }
 
-
-
 .upliftDiv:hover .currUpliftDiv {
   top: 20vh;
 }
-.currUpliftdiv:hover{
+.currUpliftdiv:hover {
   top: 20vh;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    /* scale: 0.5; */
+    /* clip-path: inset(100% 100% 0 0); */
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    /* scale: 1; */
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+
+
+  }
+}
+
+.blockElem {
+  animation: appear  ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }

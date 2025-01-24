@@ -97,7 +97,7 @@ const Banner = () => {
   });
   return (
     <>
-      <div className=" bg-[#FBF9F6] overflow-hidden  flex w-screen-2xl mx-auto  h-[100vh]   wixui_rich_text ">
+      <div className=" blockElem mt-24 bg-[white] shadow-2xl rounded-xl max-w-[90vw] overflow-hidden  flex w-screen-2xl mx-auto  h-[100vh]   wixui_rich_text ">
         <div className=" relative   w-[100%] flex items-center justify-center  gap-5  ">
           {/* <img
               src={bannerImg9}
@@ -106,7 +106,7 @@ const Banner = () => {
             /> */}
           <animated.div
             style={leftEarPhone}
-            className="absolute  left-[55vw]    h-[40vh] w-[20vw] top-0"
+            className="absolute  left-[50vw]    h-[40vh] w-[20vw] top-0"
           >
             <img
               src={bannerImg10}
@@ -116,7 +116,7 @@ const Banner = () => {
           </animated.div>
           <animated.div
             style={rightEarPhone}
-            className="absolute  left-[55vw]  h-[40vh] w-[20vw] top-0"
+            className="absolute  left-[50vw]  h-[40vh] w-[20vw] top-0"
           >
             <img
               src={bannerImg11}
@@ -139,11 +139,11 @@ const Banner = () => {
               className=" h-[80%] absolute bottom-[10vh]"
               alt=""
             />
-            <img
+            {/* <img
               src={bannerImg6}
               className=" rotate-180 absolute left-[10vw]  bottom-[-20vh]"
               alt=""
-            />
+            /> */}
           </animated.div>
           <animated.div
             style={props}
@@ -175,12 +175,12 @@ const Banner = () => {
             />
           </animated.div>
 
-          <animated.div
+          {/* <animated.div
             style={leftBottom}
             className="flex justify-center items-center absolute bottom-0   h-[30vh] w-[30vw]"
           >
-            <img src={bannerImg12} className="absolute bottom-[-9vh]" alt="" />
-          </animated.div>
+            <img src={bannerImg12} className="absolute bottom-[0vh]" alt="" />
+          </animated.div> */}
 
           <animated.div
             className="   items-center justify-center flex  flex-col gap-5 h-[70%] text-center relative top-[10vh]    p-10 smooch-sans-font   w-[40%]"

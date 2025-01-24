@@ -2,7 +2,8 @@ import React from "react";
 import sendIcon from "../../assets/send.png";
 const Footer = () => {
   return (
-    <div className="border-t-2 p-20 h-[70vh]   flex justify-between ">
+    <div className="flex  justify-center w-full">
+    <div className="     p-20 h-[70vh] max-w-[87vw]   flex justify-between ">
       {/* <div className="bg-[#FFF6F6] h-[98%] w-[99vw] shadow-2xl rounded-lg"></div> */}
       <div className="flex flex-col gap-5 font-thin   w-[20vw]">
         <span className=" text-2xl  font-medium">Explore</span>
@@ -47,6 +48,7 @@ const Footer = () => {
           </label>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -12,19 +12,24 @@ const DiscoverLIbrary = () => {
     useContext(BooksRenderContext);
 
   return (
-    <>
-      <div className="bg-[#FFF6F6] w-full flex justify-between px-[9vw] py-10 text-4xl  ">
-        <span className="tracking-wide z-20 ">Discover By Category</span>
-        <Link to={"/books"} className="flex font-thin text-xl font-[monospace] z-20 items-center cursor-pointer text-gray-600">
+    <> 
+
+      <div className="flex     justify-between">
+      <div className="max-w-[87vw] absolute [bg-[#FBF9F6] w-full flex justify-center   px-[9vw] py-10 text-4xl  ">
+        <span className="tracking-wide z-20 absolute left-36   ">Discover By Category</span>
+        <Link to={"/books"} className="flex    absolute  right-0 font-thin text-xl font-[monospace] z-20 items-center cursor-pointer text-gray-600">
           Visit All
           <BiChevronRight />
         </Link>
       </div>
+      </div>
+      <div className="flex justify-center">
       <Carousel
+       
         loop="true"
         autoplay="true"
         autoplayDelay={"10000"}
-        className="   flex bottom-[20vh] h-screen w-[99vw] bg-[#FFF6F6]"
+        className="    flex max-w-[87vw]   h-screen w-[99vw]  "
         prevArrow={({ handlePrev }) => (
           <IconButton
             variant="text"
@@ -82,11 +87,11 @@ const DiscoverLIbrary = () => {
           </IconButton>
         )}
       >
-        <div className="h-full  w-full flex p-10 justify-center items-center ">
+        <div className="h-full gap-10  w-full flex p-10 justify-center items-center ">
           {selfHelpBook.selfHelpBooks.map((elem, idx) => {
             if (idx == 0 || idx == 6)
               return (
-                <div className=" bg-white  cursor-pointer    w-[45%] flex items-center  p-5 h-[65%]    overflow-hidden border justify-between hover:shadow-lg hover:scale-[1.01] duration-150  ease-linear ">
+                <div className=" bg-white rounded-md  cursor-pointer    w-[45%] flex items-center  p-5 h-[60%]  shadow-lg    overflow-hidden     justify-between hover:shadow-lg hover:scale-[1.01] duration-150  ease-linear ">
                   <div className=" w-[70%] flex h-[100%]  rounded-lg items-center p-3 ">
                     <img
                       src={elem.book_image}
@@ -107,11 +112,11 @@ const DiscoverLIbrary = () => {
               );
           })}
         </div>
-        <div className="h-full  w-full flex p-10 justify-center items-center ">
+        <div className="h-full  w-full gap-10 flex p-10 justify-center items-center ">
           {fictionalBook.fictionalBooks.map((elem, idx) => {
             if (idx == 2 || idx == 3)
               return (
-                <div className=" bg-white  cursor-pointer    w-[45%] flex items-center  p-5 h-[65%]    overflow-hidden border justify-between hover:shadow-lg hover:scale-[1.01] duration-150  ease-linear ">
+                <div className=" bg-white  cursor-pointer rounded-md   w-[45%] flex items-center  p-5 h-[60%]    overflow-hidden     shadow-lg justify-between hover:shadow-lg hover:scale-[1.01] duration-150  ease-linear ">
                   <div className=" w-[70%] flex h-[100%]  rounded-lg items-center p-3 ">
                     <img
                       src={elem.book_image}
@@ -133,6 +138,7 @@ const DiscoverLIbrary = () => {
           })}
         </div>
       </Carousel>
+      </div>
     </>
   );
 };
