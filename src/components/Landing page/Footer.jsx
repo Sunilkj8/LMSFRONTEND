@@ -3,10 +3,10 @@ import sendIcon from "../../assets/send.png";
 const Footer = () => {
   return (
     <div className="flex  justify-center w-full">
-    <div className="     p-20 h-[70vh] max-w-[87vw]   flex justify-between ">
+    <div className="  blockElem1      p-20 h-[70vh] max-w-[87vw] font-body    flex justify-between ">
       {/* <div className="bg-[#FFF6F6] h-[98%] w-[99vw] shadow-2xl rounded-lg"></div> */}
-      <div className="flex flex-col gap-5 font-thin   w-[20vw]">
-        <span className=" text-2xl  font-medium">Explore</span>
+      <div className="flex flex-col gap-5  font-body    w-[20vw]">
+        <span className=" text-2xl   ">Explore</span>
         <span className="relative cursor-pointer transition-all duration-300 ease-out pl-0 hover:pl-5 hover:text-red-400   ">
           About Us
         </span>

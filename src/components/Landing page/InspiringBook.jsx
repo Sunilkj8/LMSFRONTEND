@@ -11,9 +11,9 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
   const [upliftDiv, setUpliftDiv] = useState(false);
   return (
     <div className="   flex justify-center w-full items-center">
-      <div className="blockElem bg-[#f6f6f631]   shadow-2xl max-w-[87vw] w-full rounded-2xl h-[auto] mt-[10vh] px-24 gap-12 flex flex-col  mb-10  ">
+      <div className="blockElem         max-w-[87vw] w-full   h-[auto] mt-[10vh] px-24 gap-12 flex flex-col  mb-10  ">
         <div className="  smooch-sans-font flex justify-between items-center">
-          <span className="mt-10 flex font-extralight text-4xl">Featured Books</span>
+          <span className="mt-10 font-bold flex  text-5xl">Featured Books</span>
           {/* <div className="flex text-3xl gap-16 font-extralight">
           <span>Featured</span>
           <span>Recommended</span>
@@ -30,7 +30,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                 elem.book_name == "The Alchemist"
               ) {
                 return (
-                  <div className=" shadow-md rounded-lg hover:shadow-2xl hover:border-white cursor-pointer upliftDiv   overflow-hidden relative bg-[white]   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
+                  <div className=" shadow-md rounded-sm hover:shadow-2xl hover:border-white cursor-pointer upliftDiv   overflow-hidden relative bg-[white]   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
                     <div className="h-[50%] flex justify-center ">
                       <img
                         src={elem.book_image}

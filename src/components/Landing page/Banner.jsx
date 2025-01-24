@@ -97,7 +97,7 @@ const Banner = () => {
   });
   return (
     <>
-      <div className=" blockElem mt-24 bg-[white] shadow-2xl rounded-xl max-w-[90vw] overflow-hidden  flex w-screen-2xl mx-auto  h-[100vh]   wixui_rich_text ">
+      <div className=" blockElem mt-24  bg-[white]    max-w-[90vw] overflow-hidden  flex w-screen-2xl mx-auto  h-[100vh]   wixui_rich_text ">
         <div className=" relative   w-[100%] flex items-center justify-center  gap-5  ">
           {/* <img
               src={bannerImg9}
@@ -105,6 +105,7 @@ const Banner = () => {
               alt=""
             /> */}
           <animated.div
+          
             style={leftEarPhone}
             className="absolute  left-[50vw]    h-[40vh] w-[20vw] top-0"
           >

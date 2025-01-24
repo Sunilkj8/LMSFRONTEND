@@ -19,11 +19,12 @@ export function CarouselCustomArrows() {
     getFeaturedBooks();
   }, []);
   return (
+    <div className="w-full h-full flex justify-center">
     <Carousel
       loop="true"
       autoplay="true"
       autoplayDelay={"5000"}
-      className=""
+      className="  blockElem mt-[10vh] shadow-2xl rounded-2xl bg-[#eaeef44a]  flex max-w-[87vw]   h-screen w-[99vw]"
       prevArrow={({ handlePrev }) => (
         <IconButton
           variant="text"
@@ -97,5 +98,6 @@ export function CarouselCustomArrows() {
         );
       })}
     </Carousel>
+    </div>
   );
 }

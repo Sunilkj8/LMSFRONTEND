@@ -13,6 +13,8 @@ import BookPopUp from "../components/Modals/BookPopUp";
 import Example from "../components/Landing page/authorCarousel";
 import AttractingQuote from "../components/Landing page/AttractingQuote";
 import Lenis from "lenis";
+import BookTypes from "../components/Landing page/BookTypes";
+import CounterUpPage from "../components/Landing page/CounterUpPage";
 
 const Home = () => {
   useEffect(() => {
@@ -46,17 +48,19 @@ const Home = () => {
         <Banner />
 
         <AttractingQuote />
+        {/* <DiscoverLIbrary /> */}
 
         <Features />
+        <CounterUpPage/>
         <InspiringBook
           booksToRender={18}
           setPopUpState={setPopUpState}
           popUpState={popUpState}
         />
-        {/* <DiscoverLIbrary /> */}
         {/* <Quotes /> */}
-        {/* <Example/> */}
-        {/* <Example/> */}
+        <BookTypes/>
+
+        
 
         <Footer />
       </div>

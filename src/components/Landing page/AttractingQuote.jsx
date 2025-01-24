@@ -6,7 +6,7 @@ const AttractingQuote = () => {
   return (
     <>
       <div className="    mt-24  smooch-sans-font font-bold    h-[80vh] w-full flex justify-center  ">
-        <div className="blockElem bg-[#EAE8F3] shadow-2xl   rounded-lg max-w-[87vw]  px-5 flex justify-between items-center w-full">
+        <div className="blockElem     max-w-[87vw]  px-5 flex justify-between items-center w-full">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
@@ -25,7 +25,7 @@ const AttractingQuote = () => {
               // whileInView={"show"}
               // viewport={{ once: false, amount: 0.2 }}
               src={manReading}
-              className="shadow-lg bg-red-200 rounded-full w-[100%]"
+              className="  bg-red-200   w-[100%]"
               alt=""
             />
           </motion.div>{" "}
