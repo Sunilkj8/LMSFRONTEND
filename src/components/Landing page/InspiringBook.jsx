@@ -11,7 +11,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
   const [upliftDiv, setUpliftDiv] = useState(false);
   return (
     <div className="   flex justify-center w-full items-center">
-      <div className="blockElem   shadow-2xl max-w-[87vw] w-full rounded-2xl h-[auto] mt-[10vh] px-24 gap-12 flex flex-col  mb-10  ">
+      <div className="blockElem bg-[#f6f6f631]   shadow-2xl max-w-[87vw] w-full rounded-2xl h-[auto] mt-[10vh] px-24 gap-12 flex flex-col  mb-10  ">
         <div className="  smooch-sans-font flex justify-between items-center">
           <span className="mt-10 flex font-extralight text-4xl">Featured Books</span>
           {/* <div className="flex text-3xl gap-16 font-extralight">
@@ -30,7 +30,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                 elem.book_name == "The Alchemist"
               ) {
                 return (
-                  <div className=" shadow-2xl rounded-lg hover:shadow-2xl hover:border-white cursor-pointer upliftDiv   overflow-hidden relative bg-[#F6F6F6]   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
+                  <div className=" shadow-md rounded-lg hover:shadow-2xl hover:border-white cursor-pointer upliftDiv   overflow-hidden relative bg-[white]   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
                     <div className="h-[50%] flex justify-center ">
                       <img
                         src={elem.book_image}
@@ -39,7 +39,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                       />
                     </div>
                     <div
-                      className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[#F6F6F6] w-full     h-[30vh]  flex  font-semibold flex-col justify-center  px-10 text-left`}
+                      className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex  font-semibold flex-col justify-center  px-10 text-left`}
                     >
                       <div className="font-thin text-base  tracking-widest text-[#F31A52]">
                         Hardcover
