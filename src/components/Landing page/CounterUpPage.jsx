@@ -7,8 +7,9 @@ const CounterUpPage = () => {
     useContext(BooksRenderContext).inspiringBook;
   const [counterOn, setCounterOn] = useState(false);
   return (
-    <div className=" h-screen w-[99vw] flex justify-center items-center">
-      <div className="    text-black  rounded-md   blockElem  bebas-neue-regular  tracking-widest  h-full max-w-[87vw] w-full flex justify-center items-center">
+    <div className="bookTypesBgImage blockElem1 relative   h-screen w-[99vw] flex justify-center items-center">
+     <div className="bg-[#ffffffd6]  absolute h-full blockElem1 w-full   "></div>
+      <div className="      text-black z-10  rounded-md   blockElem1  orbitron-font   tracking-widest  h-full max-w-[87vw] w-full flex justify-center items-center">
         <ScrollTrigger
           onEnter={() => {
             setCounterOn(true);
@@ -59,6 +60,7 @@ const CounterUpPage = () => {
                 <span>Self Help Books</span>
               </div>
             </div>
+      
           </div>
         </ScrollTrigger>
       </div>
