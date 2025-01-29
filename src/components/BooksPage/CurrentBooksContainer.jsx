@@ -1,5 +1,10 @@
 import React, { useContext } from "react";
 import { BooksRenderContext } from "../../contexts/BooksRenderContext";
+import heart from "../../assets/heart.png";
+import borrow from "../../assets/borrow.png";
+import AniHeart from "../HeartComponent";
+import Rating from "@mui/material/Rating";
+import axios from "axios";
 
 const CurrentBooksContainer = ({
   booksToRender,
@@ -19,28 +24,51 @@ const CurrentBooksContainer = ({
   return (
     <div className="h-auto w-full   justify-center gap-3    flex flex-wrap  ">
       {currentBooks.map((elem, idx) => {
-        return(idx < booksToRender ?  
-        <div
-          onClick={() => {
-            setSelectedBook(elem);
-            setPopUpState(true);
-            document.body.style.overflowY = "hidden";
-          }}
-          className={` ${
-            border ? " " : ""
-          }  shadow-blue-gray-50 shadow-md rounded-lg cursor-pointer    w-[15vw] flex items-center gap-10 p-3 h-[55vh] flex-col montserrat-font   card-hover-transition   relative   overflow-hidden `}
-        >
-          <div className="justify-center w-[80%] flex h-[60%]  rounded-lg items-center p-3">
-            <img
-              src={elem.book_image}
-              className="w-[90%] h-[90%] rounded-sm"
-              alt=""
-            />
+        return (
+          <div className="shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black   smooch-sans-font h-[60vh] w-[22%] py-5 gap-2 flex flex-col">
+            <div className="h-[50%] flex justify-center ">
+              <img src={elem.book_image} className="h-full w-[9vw]" alt="" />
+            </div>
+            <div
+              className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex  font-semibold flex-col justify-center  px-10 text-left`}
+            >
+              <div className="font-thin text-base  tracking-widest text-[#F31A52]">
+                Hardcover
+              </div>
+              <div className="text-xl max-h-[50%] overflow-hidden tracking-wide">
+                {elem.book_name}
+              </div>
+              <div className=" text-gray-500 tracking-widest">
+                {elem.book_author}
+              </div>
+              <Rating
+                onClick={async (e) => {
+                  console.log(e.target);
+                  await axios.post("http://localhost:3001/ratinginfo", {
+                    rating: e.target.value,
+                    book_name: elem.book_name,
+                  });
+                }}
+                className="mt-3"
+                name="size-medium"
+                defaultValue={elem.star_ratings}
+              />
+
+              {/* <div>Rating Upcoming!</div> */}
+            </div>
+            <div className=" flex justify-between h-[auto] top-[52vh] absolute w-full">
+              <AniHeart
+                // bookName={elem.book_name}
+                className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[10vw]  "
+              />
+              <img
+                src={borrow}
+                className=" hover:scale-[1.14] cursor-pointer duration-200 h-[7vh] relative left-[-10vw]  "
+                alt=""
+              />
+            </div>
           </div>
-          {/* <div className="text-red-500 font-extrabold  uppercase absolute bottom-[-1000px] ">Paperback</div> */}
-          <div className="font-extrabold">{elem.book_name}</div>
-          <div>{elem.book_author}</div>
-        </div>:"")
+        );
       })}
     </div>
   );

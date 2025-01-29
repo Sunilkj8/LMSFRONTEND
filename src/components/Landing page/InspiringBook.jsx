@@ -4,11 +4,16 @@ import crackingTheCodingInterview from "../../assets/crackingTheCodingInterview.
 import CurrentBooksContainer from "../BooksPage/CurrentBooksContainer";
 import { BooksRenderContext } from "../../contexts/BooksRenderContext";
 import heart from "../../assets/heart.png";
+import Heart from "react-heart";
+import Rating from "@mui/material/Rating";
 import borrow from "../../assets/borrow.png";
+import AniHeart from "../HeartComponent";
+import axios from "axios";
 const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
   const { inspiringBooks, setInspiringBooks } =
     useContext(BooksRenderContext).inspiringBook;
   const [upliftDiv, setUpliftDiv] = useState(false);
+  const [active, setActive] = useState(false);
   return (
     <div className="   flex justify-center w-full items-center">
       <div className="blockElem         max-w-[87vw] w-full   h-[auto] mt-[10vh] px-24 gap-12 flex flex-col  mb-10  ">
@@ -30,7 +35,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                 elem.book_name == "The Alchemist"
               ) {
                 return (
-                  <div className=" shadow-md rounded-sm hover:shadow-2xl hover:border-white cursor-pointer upliftDiv   overflow-hidden relative bg-[white]   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
+                  <div className=" shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
                     <div className="h-[50%] flex justify-center ">
                       <img
                         src={elem.book_image}
@@ -50,14 +55,22 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                       <div className=" text-gray-500 tracking-widest">
                         {elem.book_author}
                       </div>
+                      <Rating
+                        onClick={async (e) => {
+                          console.log(e.target);
+                          await axios.post("http://localhost:3001/ratinginfo", {
+                            rating: e.target.value,
+                            book_name: elem.book_name,
+                          });
+                        }}
+                        name="size-medium"
+                        defaultValue={elem.star_ratings}
+                      />
+
                       {/* <div>Rating Upcoming!</div> */}
                     </div>
                     <div className=" flex justify-between h-[auto] top-[52vh] absolute w-full">
-                      <img
-                        src={heart}
-                        className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[10vw]  "
-                        alt=""
-                      />
+                      <AniHeart className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[10vw]  " />
                       <img
                         src={borrow}
                         className=" hover:scale-[1.14] cursor-pointer duration-200 h-[7vh] relative left-[-10vw]  "

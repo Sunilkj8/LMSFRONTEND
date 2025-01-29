@@ -15,6 +15,8 @@ import AttractingQuote from "../components/Landing page/AttractingQuote";
 import Lenis from "lenis";
 import BookTypes from "../components/Landing page/BookTypes";
 import CounterUpPage from "../components/Landing page/CounterUpPage";
+import RatingsIntro from "../components/Landing page/RatingsIntro";
+import FavouriteIntro from "../components/Landing page/FavouriteIntro";
 
 const Home = () => {
   useEffect(() => {
@@ -44,23 +46,23 @@ const Home = () => {
         popUpState={popUpState}
       />
 
-      <div className="view">
+      <div className="bg-[#FFFFFF] view">
         <Banner />
 
         <AttractingQuote />
         {/* <DiscoverLIbrary /> */}
-
+        
         <Features />
-        <CounterUpPage/>
+        <RatingsIntro />
+        <FavouriteIntro/>
         <InspiringBook
           booksToRender={18}
           setPopUpState={setPopUpState}
           popUpState={popUpState}
         />
+        <CounterUpPage />
         {/* <Quotes /> */}
-        <BookTypes/>
-
-        
+        {/* <BookTypes/> */}
 
         <Footer />
       </div>
