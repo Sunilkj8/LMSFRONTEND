@@ -25,20 +25,20 @@ const CurrentBooksContainer = ({
     <div className="h-auto w-full   justify-center gap-3    flex flex-wrap  ">
       {currentBooks.map((elem, idx) => {
         return (
-          <div className="shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black   smooch-sans-font h-[60vh] w-[22%] py-5 gap-2 flex flex-col">
+          <div className="shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black     h-[60vh] w-[22%] py-5 gap-2 flex flex-col">
             <div className="h-[50%] flex justify-center ">
               <img src={elem.book_image} className="h-full w-[9vw]" alt="" />
             </div>
             <div
-              className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex  font-semibold flex-col justify-center  px-10 text-left`}
+              className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex    flex-col justify-center  px-10 text-left`}
             >
-              <div className="font-thin text-base  tracking-widest text-[#F31A52]">
+              <div className="font-thin    tracking-widest text-[#F31A52]">
                 Hardcover
               </div>
-              <div className="text-xl max-h-[50%] overflow-hidden tracking-wide">
+              <div className=" max-h-[50%] overflow-hidden tracking-wide">
                 {elem.book_name}
               </div>
-              <div className=" text-gray-500 tracking-widest">
+              <div className=" text-gray-500 tracking-wide">
                 {elem.book_author}
               </div>
               <Rating

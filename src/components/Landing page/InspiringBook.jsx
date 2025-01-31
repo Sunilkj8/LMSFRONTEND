@@ -15,10 +15,15 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
   const [upliftDiv, setUpliftDiv] = useState(false);
   const [active, setActive] = useState(false);
   return (
-    <div className="   flex justify-center w-full items-center">
-      <div className="blockElem         max-w-[87vw] w-full   h-[auto] mt-[10vh] px-24 gap-12 flex flex-col  mb-10  ">
-        <div className="  smooch-sans-font flex justify-between items-center">
-          <span className="mt-10 font-bold flex  text-5xl">Featured Books</span>
+    <div className="blockElem    flex justify-center w-full items-center">
+      <div className=" shadow-2xl bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300
+
+
+
+    relative rounded-3xl         max-w-[87vw] w-full justify-center items-center  h-[90vh] mt-[10vh] px-24 gap-20 flex flex-col  mb-10  ">
+        <div className="  opacity-60  absolute rounded-3xl  h-full w-full "></div>
+        <div className="    flex justify-between gap-10 items-center">
+          <span className="z-10 mt-10 font-bold flex  text-6xl text-black tracking-tighter ">Featured Books</span>
           {/* <div className="flex text-3xl gap-16 font-extralight">
           <span>Featured</span>
           <span>Recommended</span>
@@ -26,7 +31,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
         </div> */}
         </div>
         <div className="   h-[70vh]    flex">
-          <div className="    h-full w-full px-4    justify-between flex  ">
+          <div className="    h-full w-full px-4    justify-between flex gap-24  ">
             {inspiringBooks.map((elem, idx) => {
               if (
                 elem.book_name == "Atomic Habits" ||
@@ -35,7 +40,7 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                 elem.book_name == "The Alchemist"
               ) {
                 return (
-                  <div className=" shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black   smooch-sans-font h-[60vh] w-[19%] py-5 gap-2 flex flex-col">
+                  <div className=" shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black     h-[60vh] w-[14vw] py-5 gap-2 flex flex-col">
                     <div className="h-[50%] flex justify-center ">
                       <img
                         src={elem.book_image}
@@ -44,15 +49,15 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                       />
                     </div>
                     <div
-                      className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex  font-semibold flex-col justify-center  px-10 text-left`}
+                      className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex   flex-col justify-center  px-10 text-left`}
                     >
-                      <div className="font-thin text-base  tracking-widest text-[#F31A52]">
+                      <div className="font-thin    tracking-widest text-[#F31A52]">
                         Hardcover
                       </div>
-                      <div className="text-xl max-h-[50%] overflow-hidden tracking-wide">
+                      <div className="  max-h-[50%] overflow-hidden tracking-wide">
                         {elem.book_name}
                       </div>
-                      <div className=" text-gray-500 tracking-widest">
+                      <div className=" text-gray-500 tracking-wide">
                         {elem.book_author}
                       </div>
                       <Rating

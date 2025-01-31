@@ -49,13 +49,11 @@ const Home = () => {
       <div className="bg-[#FFFFFF] view">
         <Banner />
 
-        <AttractingQuote />
+        {/* <AttractingQuote /> */}
         {/* <DiscoverLIbrary /> */}
         
         <Features />
-        <RatingsIntro />
-        <FavouriteIntro/>
-        <InspiringBook
+          <InspiringBook
           booksToRender={18}
           setPopUpState={setPopUpState}
           popUpState={popUpState}
