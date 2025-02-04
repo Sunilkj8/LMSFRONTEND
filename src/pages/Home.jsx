@@ -17,6 +17,7 @@ import BookTypes from "../components/Landing page/BookTypes";
 import CounterUpPage from "../components/Landing page/CounterUpPage";
 import RatingsIntro from "../components/Landing page/RatingsIntro";
 import FavouriteIntro from "../components/Landing page/FavouriteIntro";
+import FavoritesIntro from "../components/Landing page/FavoritesIntro";
 
 const Home = () => {
   useEffect(() => {
@@ -43,14 +44,13 @@ const Home = () => {
         {/* <DiscoverLIbrary /> */}
 
         <Features />
+        <RatingsIntro/>
+        <FavoritesIntro/>
         <InspiringBook
           booksToRender={18}
           setPopUpState={setPopUpState}
           popUpState={popUpState}
         />
-        <CounterUpPage />
-        {/* <Quotes /> */}
-        {/* <BookTypes/> */}
 
         <Footer />
       </div>

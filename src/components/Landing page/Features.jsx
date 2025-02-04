@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <>
       <div className="flex items-center justify-center flex-col h-[90vh] w-full relative  overflow-hidden blockElem mt-5">
-        <div className="shadow-2xl rounded-3xl bg-gradient-to-br from-teal-200 to-lime-300
+        <div className="shadow-2xl rounded-3xl bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300
 
 
 
