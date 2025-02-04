@@ -26,7 +26,7 @@ export default function AniHeart({ bookName }) {
   }, []);
 
   return (
-    <div className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[9vw] bottom-3  ">
+    <div className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[12vw] bottom-5  ">
       <Heart
         isClick={isFav ? true : isClick}
         onClick={(e) => {

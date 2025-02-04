@@ -57,7 +57,7 @@ export default function NestedModal({ selectedBook, miniModalOpen }) {
     <div>
       <span
         onClick={handleOpen}
-        className= " relative right-[10vw] text-black text-lg flex justify-center items-center capitalize  gap-3"
+        className= " relative right-[13vw] text-black text-lg flex justify-center bottom-3 items-center capitalize  gap-3"
       >
         <img
           src={heart}

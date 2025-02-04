@@ -28,7 +28,7 @@ const CurrentBooksContainer = ({
     <div className="h-auto w-full   justify-center gap-10    flex flex-wrap  ">
       {currentBooks.map((elem, idx) => {
         return (
-          <div className="shadow-sm rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv border border-gray-300   overflow-hidden relative bg-[white] hover:border h-[60vh] w-[15%] py-5 gap-2 flex flex-col">
+          <div className="shadow-sm rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv border border-gray-300   overflow-hidden relative bg-[white] hover:border h-[60vh] w-[20%] py-5 gap-2 flex flex-col">
             <div
               onClick={() => {
                 setSelectedBook(elem);
@@ -69,7 +69,7 @@ const CurrentBooksContainer = ({
               <AniHeart
                 bookName={elem.book_name}
                 // bookName={elem.book_name}
-                className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[10vw]  "
+                className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative   "
               />
               {/* <img
                 onClick={() => {

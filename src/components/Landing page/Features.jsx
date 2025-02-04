@@ -16,15 +16,15 @@ const Features = () => {
             <div className=" h-full w-full flex justify-center gap-[15vw] items-center" >
               <div className="blockElem1 h-[20rem] w-[30vw] flex flex-col items-center justify-center gap-4   mb-5   ">
                 <img className=" h-1/2  " src={managingBooks} alt=""   />
-                <span className="text-center text-xl font-light capitalize  "> Managing Books</span>
+                <span className="text-center text-xl  font-semibold capitalize tracking-wide  "> Managing Books</span>
               </div>
               <div className="blockElem1  h-[20rem] w-[30vw] flex flex-col items-center justify-center gap-4   mb-5     ">
                 <img className="  h-1/2  ]" src={issuingReturning} alt="" />
-                <span className="capitalize text-center text-xl font-light">Issuing and Returning</span>
+                <span className="capitalize text-center text-xl font-semibold tracking-wide">Issuing and Returning</span>
               </div>
               <div className="blockElem1 h-[20rem] w-[30vw] flex flex-col  items-center justify-center mb-5 gap-4 text-center    ">
                 <img className="h-1/2" src={browseSearch} alt="" />
-                <span className="capitalize text-center text-xl font-light">Browse And Search Books</span>
+                <span className="capitalize text-center text-xl font-semibold">Browse And Search Books</span>
               </div>
             </div>
           </div>
