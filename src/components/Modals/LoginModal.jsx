@@ -43,7 +43,7 @@ const LoginModal = () => {
     <>
       <div className={`fixed blurBG left-0 right-0 top-0 bottom-0 z-20`}></div>
       <div
-        className={`fixed max-w-[30rem] h-[60vh] top-[20%]  left-[35%]   bg-white p-[20px] z-50  `}
+        className={`fixed max-w-[40rem] h-[60vh] top-[20%]  left-[35%] w-[30rem]   bg-white p-[20px] z-50  `}
       >
         <div className="w-full flex items-end   justify-end ">
           {" "}
@@ -80,7 +80,7 @@ const LoginModal = () => {
                 });
               }}
               name="username"
-              className="bg-white border-[1px] border-black outline-none rounded-md h-9 p-6 "
+              className="bg-white border-[1px] border-black outline-none rounded-md h-9 p-6 w-[20vw] "
               type="text"
               placeholder="Username"
             />
@@ -101,7 +101,7 @@ const LoginModal = () => {
               });
             }}
             name="email"
-            className="bg-white border-[1px] border-black outline-none rounded-md h-9 p-6 "
+            className="bg-white border-[1px] border-black outline-none rounded-md h-9 p-6 w-[20vw] "
             type="text"
             placeholder="Email"
           />
@@ -120,7 +120,7 @@ const LoginModal = () => {
               });
             }}
             name="password"
-            className="bg-white border-[1px] border-black outline-none rounded-md h-9 p-6 "
+            className="bg-white border-[1px] border-black outline-none rounded-md h-9 p-6 w-[20vw] "
             type="password"
             placeholder="Password"
           />

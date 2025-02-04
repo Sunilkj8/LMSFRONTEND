@@ -146,27 +146,13 @@ const BorrowBookPopUp = ({
   // calcMonthDays();
 
   return (
-    <div className="fixed left-[50vw] top-[20vh] h-[70%] w-[28vw] bg-[white] rounded-md    justify center items-center flex-col py-20 duration-300 transition-all ease-in-out z-50 border-2 px-20">
-      <div
-        className="absolute left-[24vw] top-[3vh] font-extralight  cursor-pointer"
-        onClick={() => {
-          setBorrowBookPopUp(false);
-          //   document.body.style.overflowY = "scroll";
-        }}
-      >
-        <svg width="32" height="32" viewbox="0 0 32 32">
-          <path
-            d="M 10,10 L 30,30 M 30,10 L 10,30"
-            stroke="black"
-            stroke-width="3"
-          />
-        </svg>
-      </div>
+    <div className="p-10 ">
+       
       <div className="flex items-center justify-start gap-3 flex-col">
         <div>{selectedBook.book_name}</div>
         <div className="flex items-center gap-2">
           {" "}
-          <h2 className="uppercase ">Issuing On</h2>
+          <h2 className="capitalize ">Issuing On</h2>
           <input
             onChange={() => {
               // console.log(issuedOnRef.current.value);
@@ -183,7 +169,7 @@ const BorrowBookPopUp = ({
         </div>
         <div className="flex items-center gap-2">
           {" "}
-          <h2 className="uppercase  ">Return On</h2>
+          <h2 className="capitalize  ">Return On</h2>
           <input
             onChange={() => {
               // console.log(issuedOnRef.current.value);

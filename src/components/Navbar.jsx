@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { IsLoginClicked } from "../contexts/LoginContext";
 import { getLocalUsername } from "../helperFunctions/localstorage";
 import userProfileIcon from "../assets/profile-user.png";
@@ -39,7 +39,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
   useEffect(() => {
     getFilteredBooks();
   }, [currSearch]);
- 
+  const navigate = useNavigate();
 
   const { loginClickState, setLoginClickState } = useContext(IsLoginClicked);
 
@@ -113,6 +113,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                   placeholder="Search"
                   onChange={(e) => {
                     setCurrSearch(e.target.value);
+                    navigate("/books")
                   }}
                 />
                 <svg

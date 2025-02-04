@@ -35,25 +35,15 @@ const Home = () => {
   return (
     <>
       {/* <LoginModal /> */}
-      {popUpState ? (
-        <div className="fixed h-screen w-[99vw] popUpDivCover"></div>
-      ) : (
-        ""
-      )}
-      <BookPopUp
-        translateX={"16vw"}
-        setPopUpState={setPopUpState}
-        popUpState={popUpState}
-      />
 
       <div className="bg-[#FFFFFF] view">
         <Banner />
 
         {/* <AttractingQuote /> */}
         {/* <DiscoverLIbrary /> */}
-        
+
         <Features />
-          <InspiringBook
+        <InspiringBook
           booksToRender={18}
           setPopUpState={setPopUpState}
           popUpState={popUpState}

@@ -10,6 +10,7 @@ import { BooksRenderContext } from "./contexts/BooksRenderContext";
 import axios from "axios";
 import Admin from "./pages/Admin";
 import AdminHome from "./components/AdminPages/AdminHome";
+import BookDetails from "./components/BooksPage/BookDetails";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
@@ -36,7 +37,6 @@ const App = () => {
     console.log(res.data);
     setInspiringBooks(res.data);
     setCurrentBooks(res.data);
-
   };
 
   async function getUserBorrowedBooks() {
@@ -67,6 +67,7 @@ const App = () => {
           children: [
             { index: true, element: <Home /> },
             { path: "/books", element: <Books /> },
+            { path: "/books/:bookName", element: <BookDetails /> },
             { path: "/borrowedbooks", element: <BorrowedBooks /> },
           ],
         }

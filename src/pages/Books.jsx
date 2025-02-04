@@ -30,10 +30,6 @@ const Books = () => {
     }
   }
 
-   
-
-  
-
   return (
     <>
       {" "}
@@ -42,29 +38,25 @@ const Books = () => {
       ) : (
         ""
       )}
-      <div className="border-t-2 mt-[10vh] border-b-2 h-[10vh] flex items-center px-32">
-        <Link to={"/"} className="hover:text-red-400 cursor-pointer">
-          Home
-        </Link>{" "}
-        <span className="ml-2">
-          {" "}
-          {">"} {currentCategory}
-        </span>
+      <div className="  mt-[1vh]   h-[10vh] flex items-center px-32">
+        <div to={""} className="hover:text-red-400 cursor-pointer"></div>{" "}
       </div>
-      <div className=" flex h-auto mt-[5vh] w-[99vw]    px-[3vw] py-[7vh] gap-10">
-        <Accordion getCurrentBooks={getCurrentBooks} />
-        <div className="h-auto w-[70%] p-3">
-          <BookPopUp popUpState={popUpState} setPopUpState={setPopUpState} />
+      <div className=" flex h-auto mt-[2vh] w-[99vw] flex-col   px-[3vw] py-[7vh] gap-10">
+        <Accordion
+           getCurrentBooks={getCurrentBooks}
+        />
+
+        <div className="h-auto w-full p-3">
+          {/* <BookPopUp popUpState={popUpState} setPopUpState={setPopUpState} /> */}
           <CurrentBooksContainer
             booksToRender={24}
             setPopUpState={setPopUpState}
             border={true}
             currentBooks={currentBook.currentBooks}
           />
-
         </div>
       </div>
-        <Footer/>
+      <Footer />
     </>
   );
 };

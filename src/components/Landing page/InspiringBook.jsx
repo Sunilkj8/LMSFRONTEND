@@ -9,21 +9,30 @@ import Rating from "@mui/material/Rating";
 import borrow from "../../assets/borrow.png";
 import AniHeart from "../HeartComponent";
 import axios from "axios";
+import NestedModal from "../Modals/MiniBookPopUp";
+import { useNavigate } from "react-router-dom";
 const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
   const { inspiringBooks, setInspiringBooks } =
     useContext(BooksRenderContext).inspiringBook;
+  const { selectedBook, setSelectedBook } =
+    useContext(BooksRenderContext).selectedBook;
   const [upliftDiv, setUpliftDiv] = useState(false);
   const [active, setActive] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="blockElem    flex justify-center w-full items-center">
-      <div className=" shadow-2xl bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300
+      <div
+        className=" shadow-2xl bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300
 
 
 
-    relative rounded-3xl         max-w-[87vw] w-full justify-center items-center  h-[90vh] mt-[10vh] px-24 gap-20 flex flex-col  mb-10  ">
+    relative rounded-3xl         max-w-[87vw] w-full justify-center items-center  h-[90vh] mt-[10vh] px-24 gap-20 flex flex-col  mb-10  "
+      >
         <div className="  opacity-60  absolute rounded-3xl  h-full w-full "></div>
         <div className="    flex justify-between gap-10 items-center">
-          <span className="z-10 mt-10 font-bold flex  text-6xl text-black tracking-tighter ">Featured Books</span>
+          <span className="z-10 mt-10 font-bold flex text-transparent bg-clip-text bg-gradient-to-bl from-black to-gray-600  text-6xl text-black tracking-tighter ">
+            Featured Books
+          </span>
           {/* <div className="flex text-3xl gap-16 font-extralight">
           <span>Featured</span>
           <span>Recommended</span>
@@ -41,7 +50,13 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
               ) {
                 return (
                   <div className=" shadow-md rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv   overflow-hidden relative bg-[white] hover:border   border-black     h-[60vh] w-[14vw] py-5 gap-2 flex flex-col">
-                    <div className="h-[50%] flex justify-center ">
+                    <div
+                      onClick={() => {
+                        setSelectedBook(elem);
+                        navigate(`/books/${elem.book_name}`);
+                      }}
+                      className="h-[50%] flex justify-center "
+                    >
                       <img
                         src={elem.book_image}
                         className="h-full w-[9vw]"
@@ -75,12 +90,12 @@ const InspiringBook = ({ setPopUpState, popUpState, booksToRender }) => {
                       {/* <div>Rating Upcoming!</div> */}
                     </div>
                     <div className=" flex justify-between h-[auto] top-[52vh] absolute w-full">
-                      <AniHeart className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[10vw]  " />
-                      <img
-                        src={borrow}
-                        className=" hover:scale-[1.14] cursor-pointer duration-200 h-[7vh] relative left-[-10vw]  "
-                        alt=""
+                      <AniHeart
+                        bookName={elem.book_name}
+                        className=" hover:scale-[1.14] h-[9.5vh] flex justify-center duration-200 cursor-pointer items-center rounded-full  relative left-[10vw]  "
                       />
+
+                      <NestedModal selectedBook={elem} />
                     </div>
                   </div>
                 );

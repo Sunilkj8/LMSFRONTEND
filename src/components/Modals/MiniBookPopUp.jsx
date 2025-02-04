@@ -38,13 +38,13 @@ function ChildModal({ selectedBook }) {
       >
         <Box sx={{ ...style, width: 500 }}>
           <BorrowBookPopUp selectedBook={selectedBook} />
-         </Box>
+        </Box>
       </Modal>
     </React.Fragment>
   );
 }
 
-export default function NestedModal({ selectedBook }) {
+export default function NestedModal({ selectedBook, miniModalOpen }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -55,13 +55,16 @@ export default function NestedModal({ selectedBook }) {
 
   return (
     <div>
-      <div className="bg-[white]  text-black flex items-center px-3   shadow-md gap-5 rounded-md h-[7vh] cursor-pointer hover:scale-[1.01] duration-100">
-        <Button onClick={handleOpen}>
-          <span className="text-black text-lg flex justify-center items-center capitalize  gap-3">
-            Borrow Book <img src={heart} className="h-[5vh]" alt="" />
-          </span>
-        </Button>
-      </div>
+      <span
+        onClick={handleOpen}
+        className= " relative right-[10vw] text-black text-lg flex justify-center items-center capitalize  gap-3"
+      >
+        <img
+          src={heart}
+          className="h-[7vh] hover:scale-[1.14] duration-200"
+          alt=""
+        />
+      </span>
       <Modal
         open={open}
         onClose={handleClose}
@@ -81,7 +84,7 @@ export default function NestedModal({ selectedBook }) {
               <div className="text-2xl font-semibold">
                 {selectedBook.book_name}
               </div>
-              {/* <div className="flex-wrap">{selectedBook.book_description}</div> */}
+              <div className="flex-wrap">{selectedBook.book_description}</div>
               <ChildModal selectedBook={selectedBook} />
             </div>
           </div>
