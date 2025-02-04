@@ -12,7 +12,7 @@ const BookDetails = () => {
   return (
     <>
       <div className="flex justify-center items-center h-[80vh] w-[99vw] mt-24">
-        <div className=" bg-[#070821] text-white shadow-2xl rounded-3xl px-5 py-10 max-w-[90vw] w-full h-full   flex gap-14">
+        <div className=" bg-gray-200 text-black shadow-2xl rounded-3xl px-5 py-10 max-w-[90vw] w-full h-full   flex gap-14">
           <div className="flex justify-center items-center w-[25%]   rounded-xl p-10 bg-white  shadow-2xl h-[100%]">
             {" "}
             <img

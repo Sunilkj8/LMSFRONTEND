@@ -166,7 +166,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                 >
                   {profileDropDown ? (
                     <div className="flex items-center justify-center">
-                      <h1 className="text-white text-3xl relative bottom-1 left-[3px] font-light h-[25px] w-[25px]  ">
+                      <h1 className="text-white text-3xl relative bottom-[5px] left-[4.5px] font-light h-[25px] w-[25px]  ">
                         &times;
                       </h1>
                     </div>
@@ -193,12 +193,17 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                     <h1 className="capitalize text-xl">{username}</h1>
                     <h1 className="capitalize text-base">
                       {" "}
-                      <NavLink to={"/books"}>Books</NavLink>
+                      <NavLink className={"transition-all duration-300 hover:text-red-500"} to={"/books"}>Books</NavLink>
                     </h1>
                     <h1 className="capitalize text-base">
                       {" "}
-                      <NavLink to={"/borrowedbooks"}>borrowedbooks</NavLink>
+                      <NavLink className={"transition-all duration-300 hover:text-red-500"} to={"/borrowedbooks"}>borrowedbooks</NavLink>
+
                     </h1>
+                    <h1 className="capitalize text-base">
+                    <NavLink className={"transition-all duration-300 hover:text-red-500"} to={"/favorites"}>Favorites</NavLink>
+                    </h1>
+
 
                     <span
                       onClick={() => {

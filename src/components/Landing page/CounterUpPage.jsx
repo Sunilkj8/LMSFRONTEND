@@ -8,8 +8,9 @@ const CounterUpPage = () => {
   const [counterOn, setCounterOn] = useState(false);
   return (
     <div className="blockElem    relative   h-screen w-[99vw] flex justify-center items-center">
-     <div className="statisticsBg   opacity-85     absolute h-full   w-full max-w-[87vw] rounded-3xl   "></div>
-      <div className=" bg-gradient-to-r from-[#289ad7b6] to-[#45ab6ecc]    text-white  z-10  rounded-3xl         tracking-widest  h-full max-w-[87vw] w-full flex justify-center items-center">
+     <div className="statisticsBg   opacity-15     absolute h-full   w-full max-w-[87vw] rounded-3xl   "></div>
+      <div className="  bg-[#0000004f]
+    text-transparent bg-clip-text bg-gradient-to-bl from-black to-gray-600 z-10  rounded-3xl shadow-2xl        tracking-widest  h-full max-w-[87vw] w-full flex justify-center items-center">
         <ScrollTrigger
           onEnter={() => {
             setCounterOn(true);
@@ -22,7 +23,7 @@ const CounterUpPage = () => {
             <div className=" ">
               {counterOn && (
                 <CountUp
-                  className="font-bold text-9xl text-transparent bg-clip-text bg-gradient-to-r from-[#3FDF87] to bg-[#BFF281]"
+                  className="font-bold text-9xl  "
                   start={0}
                   end={inspiringBooks.length}
                   duration={7}
@@ -34,7 +35,7 @@ const CounterUpPage = () => {
               <div className="  font-bold tracking-tight text-4xl flex flex-col justify-center gap-5 items-center">
                 {counterOn && (
                   <CountUp
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-[#3FDF87] to bg-[#BFF281]"
+                    className=" "
                     start={0}
                     end={
                       useContext(BooksRenderContext).fictionalBook
@@ -48,7 +49,7 @@ const CounterUpPage = () => {
               <div className=" tracking-normal font-bold text-4xl flex flex-col justify-center gap-5 items-center">
                 {counterOn && (
                   <CountUp
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-[#3FDF87] to bg-[#BFF281]"
+                    className=" "
                     start={0}
                     end={
                       useContext(BooksRenderContext).selfHelpBook.selfHelpBooks

@@ -11,6 +11,7 @@ import axios from "axios";
 import Admin from "./pages/Admin";
 import AdminHome from "./components/AdminPages/AdminHome";
 import BookDetails from "./components/BooksPage/BookDetails";
+import Favorites from "./pages/Favorites";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
@@ -20,6 +21,7 @@ const App = () => {
   const [inspiringBooks, setInspiringBooks] = useState([]);
   const [borrowedBooks, setBorrowedBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
   // const [currentCategory, setCurrentCategory] = useState("Fictional");
 
   const getFictionalBooks = async () => {
@@ -50,12 +52,18 @@ const App = () => {
     // setUserBorrowedBooks(res.data);
     setBorrowedBooks(res.data);
   }
+
+  async function getFavoriteBooks() {
+    const res = await axios.get("http://localhost:3001/getfavoritebooks");
+    setFavoriteBooks(res.data);
+  }
   useEffect(() => {
     // getFeaturedBooks();
     getFictionalBooks();
     getSelfHelpBooks();
     getInspiringBooks();
     getUserBorrowedBooks();
+    getFavoriteBooks();
   }, []);
 
   const router = createBrowserRouter([
@@ -69,6 +77,7 @@ const App = () => {
             { path: "/books", element: <Books /> },
             { path: "/books/:bookName", element: <BookDetails /> },
             { path: "/borrowedbooks", element: <BorrowedBooks /> },
+            { path: "/favorites", element: <Favorites /> },
           ],
         }
       : {
@@ -88,6 +97,7 @@ const App = () => {
         inspiringBook: { inspiringBooks, setInspiringBooks },
         borrowedBook: { borrowedBooks, setBorrowedBooks },
         filteredBook: { filteredBooks, setFilteredBooks },
+        favoriteBook: { favoriteBooks, setFavoriteBooks },
       }}
     >
       <IsLoginClicked.Provider value={{ loginClickState, setLoginClickState }}>
