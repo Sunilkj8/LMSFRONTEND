@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Lenis from "lenis";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/RootLayout";
 import Home from "./pages/Home";

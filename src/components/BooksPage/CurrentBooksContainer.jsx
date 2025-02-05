@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { BooksRenderContext } from "../../contexts/BooksRenderContext";
-import heart from "../../assets/heart.png";
-import borrow from "../../assets/borrow.png";
+
 import AniHeart from "../HeartComponent";
 import Rating from "@mui/material/Rating";
 import axios from "axios";
@@ -23,12 +22,13 @@ const CurrentBooksContainer = ({
 
   // console.log(typeof(selectedBook));// It is an object
   const navigate = useNavigate();
-  const [miniModalOpen, setMiniModalOpen] = useState(false);
+  // const [miniModalOpen, setMiniModalOpen] = useState(false);
   return (
     <div className="h-auto w-full   justify-center gap-10    flex flex-wrap  ">
       {currentBooks.map((elem, idx) => {
         return (
-          <div className="shadow-sm rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv border border-gray-300   overflow-hidden relative bg-[white] hover:border h-[60vh] w-[20%] py-5 gap-2 flex flex-col">
+          <div className="  shadow-xl rounded-lg hover:scale-[1.02] hover:border-black cursor-pointer upliftDiv border border-gray-300  duration-300  overflow-hidden relative bg-gradient-to-r from-gray-50 via-gray-50 to-gray-100
+  hover:border h-[60vh] w-[20%] py-5 gap-2 flex flex-col">
             <div
               onClick={() => {
                 setSelectedBook(elem);
@@ -39,7 +39,8 @@ const CurrentBooksContainer = ({
               <img src={elem.book_image} className="h-full w-[9vw]" alt="" />
             </div>
             <div
-              className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-[white] w-full     h-[30vh]  flex    flex-col justify-center  px-10 text-left`}
+              className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-gradient-to-r from-gray-50 via-gray-50 to-gray-100
+ w-full     h-[30vh]  flex    flex-col justify-center  px-10 text-left`}
             >
               <div className="font-thin    tracking-widest text-[#F31A52]">
                 Hardcover

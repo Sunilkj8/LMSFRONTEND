@@ -4,8 +4,7 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import { BooksRenderContext } from "../../contexts/BooksRenderContext";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import animatedLibraryImage from '../../assets/animatedLibraryImage.jpeg'
-const DiscoverLIbrary = () => {
+ const DiscoverLIbrary = () => {
   useEffect(() => {}, []);
 
   //   console.log(BOOKS[0].book_image);
@@ -17,8 +16,8 @@ const DiscoverLIbrary = () => {
 
       <div className="flex        justify-between">
       <div className="   max-w-[87vw] absolute [bg-[#FBF9F6] w-full flex justify-center   px-[9vw] py-10 text-4xl  ">
-        <span className="tracking-wide z-20 absolute left-36 top-[15vh]   ">Discover By Category</span>
-        <Link to={"/books"} className="flex    absolute  right-0 font-thin text-xl font-[monospace] z-20 items-center top-[15vh] cursor-pointer text-gray-600">
+        <span className="tracking-wide font-bold z-20 absolute left-36 top-[15vh]   ">Discover By Category</span>
+        <Link to={"/books"} className="flex    absolute  right-0 font-thin text-xl font-semibold   z-20 items-center top-[15vh] cursor-pointer text-gray-600">
           Visit All
           <BiChevronRight />
         </Link>
@@ -30,7 +29,7 @@ const DiscoverLIbrary = () => {
         loop="true"
         autoplay="true"
         autoplayDelay={"10000"}
-        className=" blockElem mt-[10vh] shadow-2xl rounded-2xl bg-[#eaeef44a]  flex max-w-[87vw]   h-screen w-[99vw]  "
+        className=" blockElem mt-[10vh] shadow-2xl rounded-2xl bg-gradient-to-r from-gray-50 via-gray-200 to-gray-200 flex max-w-[87vw]   h-screen w-[99vw]  "
         prevArrow={({ handlePrev }) => (
           <IconButton
             variant="text"
@@ -96,7 +95,7 @@ const DiscoverLIbrary = () => {
                   <div className=" w-[70%] flex h-[100%]  rounded-lg items-center p-3 ">
                     <img
                       src={elem.book_image}
-                      className="w-[85%] h-[100%] rounded-sm shadow-xl"
+                      className="w-[95%] h-[95%] rounded-sm shadow-xl"
                       alt=""
                     />
                   </div>
@@ -121,7 +120,7 @@ const DiscoverLIbrary = () => {
                   <div className=" w-[70%] flex h-[100%]  rounded-lg items-center p-3 ">
                     <img
                       src={elem.book_image}
-                      className="w-[85%] h-[100%] rounded-sm shadow-xl"
+                      className="w-[95%] h-[100%] rounded-sm shadow-xl"
                       alt=""
                     />
                   </div>
