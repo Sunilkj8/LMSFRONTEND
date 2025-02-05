@@ -8,6 +8,7 @@ import Footer from "../components/Landing page/Footer";
 import { IsLoginClicked } from "../contexts/LoginContext";
 import Lenis from "lenis";
 import HorizontalScroll from "../components/Landing page/HorizontalScroll/HorizontalScroll";
+// import BookVaultText from "../components/Landing page/BookVaultText/BookVaultText";
 
 const Home = () => {
   useEffect(() => {
@@ -35,6 +36,8 @@ const Home = () => {
           popUpState={popUpState}
         />
         <HorizontalScroll />
+        {/* <BookVaultText/> */}
+
         <Footer />
       </div>
     </>

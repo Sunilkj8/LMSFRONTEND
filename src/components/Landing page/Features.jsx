@@ -6,11 +6,11 @@ const Features = () => {
   return (
     <>
       <div className="flex items-center justify-center flex-col h-[100vh] w-full relative  overflow-hidden blockElem mt-5">
-        <div className="shadow-2xl rounded-3xl bg-[#000000]
+        <div className="  bg-white
 
 
 
-   w-full max-w-[94vw] text-white items-center flex justify-center h-[100%]  ">
+   w-full max-w-[94vw] text-black items-center flex justify-center h-[100%]  ">
           <div className="h-1/2 w-[80%]   flex items-center   justify-between flex-col gap-[8vh]   ">
             <div className="  text-7xl font-extrabold tracking-wide">How it works?</div>
             <div className=" h-full w-full flex justify-center gap-[15vw] items-center" >
