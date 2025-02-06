@@ -21,6 +21,7 @@ const App = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [favoriteBooks, setFavoriteBooks] = useState([]);
+  const [programmingBooks, setProgrammingBooks] = useState([]);
   // const [currentCategory, setCurrentCategory] = useState("Fictional");
 
   const getFictionalBooks = async () => {
@@ -56,6 +57,11 @@ const App = () => {
     const res = await axios.get("http://localhost:3001/getfavoritebooks");
     setFavoriteBooks(res.data);
   }
+
+  async function getProgrammingBooks() {
+    const res = await axios.get("http://localhost:3001/programmingbooks");
+    setProgrammingBooks(res.data);
+  }
   useEffect(() => {
     // getFeaturedBooks();
     getFictionalBooks();
@@ -63,6 +69,7 @@ const App = () => {
     getInspiringBooks();
     getUserBorrowedBooks();
     getFavoriteBooks();
+    getProgrammingBooks();
   }, []);
 
   const router = createBrowserRouter([
@@ -97,6 +104,7 @@ const App = () => {
         borrowedBook: { borrowedBooks, setBorrowedBooks },
         filteredBook: { filteredBooks, setFilteredBooks },
         favoriteBook: { favoriteBooks, setFavoriteBooks },
+        programmingBook: { programmingBooks, setProgrammingBooks },
       }}
     >
       <IsLoginClicked.Provider value={{ loginClickState, setLoginClickState }}>

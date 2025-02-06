@@ -84,7 +84,7 @@ export default function NestedModal({ selectedBook, miniModalOpen }) {
               <div className="text-2xl font-semibold">
                 {selectedBook.book_name}
               </div>
-              <div className="flex-wrap">{selectedBook.book_description}</div>
+              {/* <div className="flex-wrap ">{selectedBook.book_description}</div> */}
               <ChildModal selectedBook={selectedBook} />
             </div>
           </div>
