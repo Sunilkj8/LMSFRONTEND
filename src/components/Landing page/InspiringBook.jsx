@@ -3,8 +3,8 @@ import ratingStars from "../../assets/ratingStars.gif";
 import favoriteIcon from "../../assets/favoriteIcon.gif";
 const InspiringBook = () => {
   return (
-    <div className="   h-[130vh] w-[99vw] flex justify-center items-center">
-      <div className="blockElem1 w-full h-[100vh] max-w-[94vw] flex items-center p-10    bg-white text-black flex-col gap-10 ">
+    <div className="  blockElem  h-[130vh] w-[99vw] flex justify-center items-center">
+      <div className=" w-full h-[100vh] max-w-[94vw] flex items-center p-10    bg-white text-black flex-col gap-10 ">
         <div className="text-7xl font-extrabold text-center ">
           Rate and Review Your Favorite Reads
         </div>

@@ -6,6 +6,8 @@ import userIcon from "../../assets/profile-user.png";
 import { BooksRenderContext } from "../../contexts/BooksRenderContext";
 import axios from "axios";
 import BookForm from "./BookForm";
+import { Drawer } from "@mui/material";
+import TemporaryDrawer from "./Drawer";
 
 const AdminHome = () => {
   const { fictionalBook, selfHelpBook, inspiringBook } =
@@ -26,16 +28,13 @@ const AdminHome = () => {
     getTotalUsers();
   }, []);
 
-  
-
   console.log(totalBorrowedBooks);
 
   return (
     <div className="h-auto w-[99vw]  bg-[#F1F5F9] flex justify-center items-center">
+      
       <div className="h-[300vh]   w-full p-8 flex flex-col text-black   rounded-xl items-center gap-10  ">
-        <div className=" w-full text-4xl  font-semibold   text-center flex    ">
-          Library Dashboard{" "}
-        </div>
+      
         <div className="max-w-[80vw] shadow-2xl  bg-white w-full h-[30vh] rounded-lg items-center flex gap-10 px-10">
           <div className="w-[30%] rounded-lg h-[80%] flex p-5 flex-col   gap-4 bg-[#EFF3FF] justify-center">
             <img src={books} className="h-[35%] w-[14%]" alt="" />
@@ -69,7 +68,7 @@ const AdminHome = () => {
 
         <div className="bg-white w-[90%] p-5 flex flex-col gap-10 h-[100vh] rounded-3xl shadow-2xl  ">
           <div className="text-4xl font-bold text-center">Add Book</div>
-           <BookForm/>
+          <BookForm />
         </div>
       </div>
     </div>

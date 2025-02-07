@@ -11,6 +11,7 @@ import Admin from "./pages/Admin";
 import AdminHome from "./components/AdminPages/AdminHome";
 import BookDetails from "./components/BooksPage/BookDetails";
 import Favorites from "./pages/Favorites";
+import AdminBorrowedBooks from "./components/AdminPages/AdminBorrowedBooks";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
@@ -89,7 +90,10 @@ const App = () => {
       : {
           path: "/",
           element: <Admin />,
-          children: [{ index: true, element: <AdminHome /> }],
+          children: [
+            { index: true, element: <AdminHome /> },
+            { path: "adborrowedbooks", element: <AdminBorrowedBooks /> },
+          ],
         },
   ]);
   const [loginClickState, setLoginClickState] = useState(false);

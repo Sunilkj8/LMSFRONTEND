@@ -97,13 +97,40 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">
                 <li className="px-2">
-                  <NavLink to={"/"}>Home</NavLink>
+                  <NavLink
+                    onClick={() => {
+                      setTimeout(() => {
+                        window.scroll(0, 0);
+                      }, 500);
+                    }}
+                    to={"/"}
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li className="px-2">
-                  <NavLink to={"/books"}>Books</NavLink>
+                  <NavLink
+                    onClick={() => {
+                      setTimeout(() => {
+                        window.scroll(0, 0);
+                      }, 500);
+                    }}
+                    to={"/books"}
+                  >
+                    Books
+                  </NavLink>
                 </li>
                 <li className="px-2">
-                  <NavLink to={"/borrowedbooks"}>Borrowed Books</NavLink>
+                  <NavLink
+                    onClick={() => {
+                      setTimeout(() => {
+                        window.scroll(0, 0);
+                      }, 500);
+                    }}
+                    to={"/borrowedbooks"}
+                  >
+                    Borrowed Books
+                  </NavLink>
                 </li>
               </ul>
               <label className=" input input-bordered flex items-center gap-2 bg-transparent mx-10 outline-none ">
@@ -113,7 +140,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                   placeholder="Search"
                   onChange={(e) => {
                     setCurrSearch(e.target.value);
-                    navigate("/books")
+                    navigate("/books");
                   }}
                 />
                 <svg
@@ -193,17 +220,36 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                     <h1 className="capitalize text-xl">{username}</h1>
                     <h1 className="capitalize text-base">
                       {" "}
-                      <NavLink className={"transition-all duration-300 hover:text-red-500"} to={"/books"}>Books</NavLink>
+                      <NavLink
+                        className={
+                          "transition-all duration-300 hover:text-red-500"
+                        }
+                        to={"/books"}
+                      >
+                        Books
+                      </NavLink>
                     </h1>
                     <h1 className="capitalize text-base">
                       {" "}
-                      <NavLink className={"transition-all duration-300 hover:text-red-500"} to={"/borrowedbooks"}>borrowedbooks</NavLink>
-
+                      <NavLink
+                        className={
+                          "transition-all duration-300 hover:text-red-500"
+                        }
+                        to={"/borrowedbooks"}
+                      >
+                        borrowedbooks
+                      </NavLink>
                     </h1>
                     <h1 className="capitalize text-base">
-                    <NavLink className={"transition-all duration-300 hover:text-red-500"} to={"/favorites"}>Favorites</NavLink>
+                      <NavLink
+                        className={
+                          "transition-all duration-300 hover:text-red-500"
+                        }
+                        to={"/favorites"}
+                      >
+                        Favorites
+                      </NavLink>
                     </h1>
-
 
                     <span
                       onClick={() => {
