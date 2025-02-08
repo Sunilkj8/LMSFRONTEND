@@ -78,7 +78,7 @@ const CategoriesShowCase = () => {
         </div>
         <div className="bg-white w-full items-center flex justify-center gap-10">
           <Slider
-            className="w-[75%] flex justify-center items-center  gap-10 "
+            className="w-[105%] flex justify-center items-center  gap-10 "
             ref={(slider) => (sliderRef = slider)}
             {...settings}
           >
