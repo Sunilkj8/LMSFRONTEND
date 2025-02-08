@@ -8,12 +8,12 @@ const InspiringBook = () => {
 
   return (
     <div className="  blockElem  h-[130vh] w-[99vw] flex justify-center items-center">
-      <div className=" shadow-2xl rounded-3xl w-full h-[100vh] max-w-[94vw] flex items-center p-10    bg-gradient-to-r from-[#EA627D]  to-[#A56BEC] text-white flex-col gap-10 ">
-        <div className="text-7xl text-black bg-gradient-to-r from-[#EA627D]  to-[#A56BEC] bg-clip-text  font-extrabold text-center ">
+      <div className="   w-full h-[100vh] max-w-[94vw] flex items-center p-10 flex-col    gap-10 ">
+        <div className="text-7xl text-black  font-extrabold text-center ">
           Rate and Review Your Favorite Reads
         </div>
         <div className="h-full flex gap-10 justify-center items-center">
-          <div className="flex flex-col gap-5   rounded-3xl shadow-2xl bg-[#e2264cb9]  w-1/2  border-black h-full items-center justify-center p-10">
+          <div className="flex flex-col gap-5   rounded-3xl shadow-2xl bg-[#000]  w-1/2  border-black h-full text-white items-center justify-center p-10">
             {/* <img src={ratingStars} className="w-[12vw] h-[25vh]   " alt="" /> */}
             <span className="text-4xl font-bold">Rate Books</span>
             <div className=" bg-gradient-to-r from-yellow-50 to-yellow-100 p-10 rounded-xl shadow-xl">
@@ -25,7 +25,7 @@ const InspiringBook = () => {
               across all genres.
             </div>
           </div>
-          <div className="flex flex-col   w-1/2   h-full items-center justify-center gap-5 p-10 bg-[#771fe3a9] rounded-3xl shadow-2xl">
+          <div className="flex flex-col   w-1/2   h-full items-center justify-center gap-5 p-10 bg-[#000] text-white rounded-3xl shadow-2xl">
             {/* <img src={favoriteIcon} className="w-[12vw] h-[25vh]    " alt="" /> */}
             <span className="text-4xl font-bold relative top-10">Add To Favorites</span>
 
