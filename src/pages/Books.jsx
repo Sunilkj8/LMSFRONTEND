@@ -18,6 +18,9 @@ const Books = () => {
   const { filteredBooks, setFilteredBooks } = filteredBook;
   // console.log(currentBook.currentBooks);
 
+  const { currentBooks, setCurrentBooks } =
+    useContext(BooksRenderContext).currentBook;
+
   function getCurrentBooks(books) {
     console.log(books);
 
@@ -32,19 +35,13 @@ const Books = () => {
 
   return (
     <>
-      {" "}
-      {popUpState ? (
-        <div className="fixed h-screen w-[99vw] popUpDivCover"></div>
-      ) : (
-        ""
-      )}
-      <div className="  mt-[1vh]   h-[10vh] flex items-center px-32">
-        <div to={""} className="hover:text-red-400 cursor-pointer"></div>{" "}
-      </div>
-      <div className=" flex h-auto mt-[2vh] w-[99vw] flex-col   px-[3vw] py-[7vh] gap-10">
-        <Accordion
-           getCurrentBooks={getCurrentBooks}
-        />
+      <div className=" flex h-auto mt-[5vh] w-[99vw] flex-col   px-[3vw] py-[7vh] gap-10">
+        <div className="flex justify-between items-center ">
+          <Accordion getCurrentBooks={getCurrentBooks} />
+          <div to={""} className=" text-3xl capitalize  text-center   ">
+            Showing {currentCategory ? currentCategory : "all "} books
+          </div>
+        </div>
 
         <div className="h-auto w-full p-3">
           {/* <BookPopUp popUpState={popUpState} setPopUpState={setPopUpState} /> */}

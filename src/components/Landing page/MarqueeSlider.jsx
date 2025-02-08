@@ -53,7 +53,7 @@ const MarqueeSlider = () => {
               {totalBorrowedBooks.length}
             </div>
             <div className="text-gray-800 text-3xl text-center  ">
-              Books borrowed
+              Books Borrowed
             </div>
           </div>
           <div className="p-4 overflow-hidden h-full text-center flex items-center flex-col ml-80">
