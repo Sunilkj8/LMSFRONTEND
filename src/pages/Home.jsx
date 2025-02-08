@@ -9,6 +9,7 @@ import { IsLoginClicked } from "../contexts/LoginContext";
 import Lenis from "lenis";
 import HorizontalScroll from "../components/Landing page/HorizontalScroll/HorizontalScroll";
 import CategoriesShowCase from "../components/Landing page/CategoriesShowCase";
+import MarqueeSlider from "../components/Landing page/MarqueeSlider";
 // import BookVaultText from "../components/Landing page/BookVaultText/BookVaultText";
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
     <>
       <div className="bg-[#FFFFFF] view">
         <Banner />
-
+        <MarqueeSlider/>
         <Features />
         <InspiringBook
           booksToRender={18}

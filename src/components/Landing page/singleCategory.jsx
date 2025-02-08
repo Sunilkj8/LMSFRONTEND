@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 const SingleCategory = ({ image, title }) => {
   const [reveal, setReveal] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <motion.div
       onClick={() => {
@@ -13,7 +17,7 @@ const SingleCategory = ({ image, title }) => {
       className="relative h-[55vh] cursor-pointer flex justify-center rounded-md    bg-[#000000d0]   items-center   "
     >
       <motion.div
-        animate={{ opacity: reveal ? 0.5 : 0.8 }}
+        animate={{ opacity: reveal ? 0.3 : 0.7 }}
         className="absolute w-full flex justify-center items-center h-full opacity-55  rounded-3xl "
       >
         <img src={image} className="  w-full h-full" alt="" />

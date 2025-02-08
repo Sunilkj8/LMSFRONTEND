@@ -7,7 +7,6 @@ import autobiographyBook from "../../assets/autobiographyBook.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import SingleCategory from "./singleCategory";
 function SampleNextArrow(props) {
@@ -71,7 +70,6 @@ const CategoriesShowCase = () => {
 
   const [reveal, setReveal] = useState(false);
 
-  const navigate = useNavigate();
   return (
     <div className="blockElem    h-[130vh] w-[99vw] p-10 flex items-center justify-center  ">
       <div className="max-w-[90vw] w-full h-full gap-24 flex  items-center justify-center  border-black flex-col">
