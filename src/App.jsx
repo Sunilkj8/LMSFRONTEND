@@ -98,6 +98,7 @@ const App = () => {
   ]);
   const [loginClickState, setLoginClickState] = useState(false);
   return (
+     
     <BooksRenderContext.Provider
       value={{
         selectedBook: { selectedBook, setSelectedBook },
@@ -115,6 +116,7 @@ const App = () => {
         <RouterProvider router={router} />
       </IsLoginClicked.Provider>
     </BooksRenderContext.Provider>
+    
   );
 };
 

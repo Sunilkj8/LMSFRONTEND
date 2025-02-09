@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-[#FFFFFF] view">
+      <div className=" view">
         <Banner />
         <MarqueeSlider/>
         <Features />

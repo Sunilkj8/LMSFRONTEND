@@ -15,14 +15,16 @@ const RootLayout = () => {
   const { loginClickState, setLoginClickState } = useContext(IsLoginClicked);
   return (
     <>
-      <Navbar
-        inspiringBooks={inspiringBooks}
-        setInspiringBooks={setInspiringBooks}
-        setCurrentBooks={setCurrentBooks}
-      />
+    
+        <Navbar
+          inspiringBooks={inspiringBooks}
+          setInspiringBooks={setInspiringBooks}
+          setCurrentBooks={setCurrentBooks}
+        />
 
-      {loginClickState && <LoginModal />}
-      <Outlet />
+        {loginClickState && <LoginModal />}
+        <Outlet />
+      
     </>
   );
 };
