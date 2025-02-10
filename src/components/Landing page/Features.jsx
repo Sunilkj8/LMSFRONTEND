@@ -5,7 +5,7 @@ import browseSearch from "../../assets/browseSearch.png";
 const Features = () => {
   return (
     <>
-      <div className="flex items-center justify-center flex-col h-[150vh] w-full relative  overflow-hidden  blockElem  mt-5">
+      <div className="flex items-center justify-center flex-col h-[100vh] w-full relative  overflow-hidden  blockElem  mt-5">
         <div className="  bg-white
 
 
