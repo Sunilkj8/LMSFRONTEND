@@ -66,7 +66,7 @@ const AdminHome = () => {
           </div>
         </div>
 
-        <div className="bg-white w-[90%] p-5 flex flex-col gap-10 h-[100vh] rounded-3xl shadow-2xl  ">
+        <div className="bg-white w-[90%] p-5 flex flex-col gap-10 h-[120vh] rounded-3xl shadow-2xl  ">
           <div className="text-4xl font-bold text-center">Add Book</div>
           <BookForm />
         </div>

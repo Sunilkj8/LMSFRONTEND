@@ -38,7 +38,7 @@ const HorizontalScroll = () => {
               if (idx % 2 == 0)
                 return (
                   <div
-                    className="  shadow-xl rounded-lg hover:scale-[1.02] hover:border-black cursor-pointer upliftDiv border border-gray-300  duration-300  overflow-hidden relative bg-gradient-to-r from-gray-50 via-gray-50 to-gray-100
+                    className="   rounded-lg hover:scale-[1.02] hover:border-black cursor-pointer upliftDiv border border-gray-300  duration-150   overflow-hidden relative  
   hover:border h-[60vh] w-[18vw] py-5 gap-2 flex flex-col"
                   >
                     <div
@@ -55,7 +55,7 @@ const HorizontalScroll = () => {
                       />
                     </div>
                     <div
-                      className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-gradient-to-r from-gray-50 via-gray-50 to-gray-100
+                      className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-white
  w-full     h-[30vh]  flex    flex-col justify-center  px-10 text-left`}
                     >
                       <div className="font-thin    tracking-widest text-[#F31A52]">
