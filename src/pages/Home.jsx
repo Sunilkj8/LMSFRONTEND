@@ -11,6 +11,8 @@ import HorizontalScroll from "../components/Landing page/HorizontalScroll/Horizo
 import CategoriesShowCase from "../components/Landing page/CategoriesShowCase";
 import MarqueeSlider from "../components/Landing page/MarqueeSlider";
 // import BookVaultText from "../components/Landing page/BookVaultText/BookVaultText";
+import ScrollToTop from "react-scroll-to-top";
+import ReviewsFeatureShowcase from "../components/Landing page/ReviewsFeatureShowcase";
 
 const Home = () => {
   useEffect(() => {
@@ -30,16 +32,22 @@ const Home = () => {
     <>
       <div className=" view">
         <Banner />
-        <MarqueeSlider/>
+        <MarqueeSlider />
         <Features />
         <InspiringBook
           booksToRender={18}
           setPopUpState={setPopUpState}
           popUpState={popUpState}
         />
-        <CategoriesShowCase/>
+        <CategoriesShowCase />
+        <ReviewsFeatureShowcase />
         <HorizontalScroll />
         {/* <BookVaultText/> */}
+        <ScrollToTop
+          className="flex items-center p-3 bg-neutral-400 justify-center"
+          smooth
+        />
+
         <Footer />
       </div>
     </>

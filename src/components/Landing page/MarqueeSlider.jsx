@@ -26,7 +26,7 @@ const MarqueeSlider = () => {
   return (
     <div className="mt-24 h-[50vh] gap-10 flex-col w-[99vw] flex justify-center items-center">
       {" "}
-      <Marquee speed={230} className="h-full w-full">
+      <Marquee speed={280} className="h-full w-full">
         <div className="ml-16 flex gap-20 justify-center items-center">
           <div className="text-9xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold overflow-hidden p-4">
             Connecting readers with the right resources, instantly
@@ -40,7 +40,7 @@ const MarqueeSlider = () => {
           </div> */}
         </div>
       </Marquee>
-      <Marquee speed={140} direction="right" className="h-full w-full">
+      {/* <Marquee speed={140} direction="right" className="h-full w-full">
         <div className="ml-96 flex gap-20 justify-center items-center">
           <div className="p-4 overflow-hidden  h-full text-center flex items-center flex-col ">
             <div className="text-8xl text-center font-extrabold">
@@ -76,7 +76,7 @@ const MarqueeSlider = () => {
             <div className="text-gray-800 text-3xl text-center  ">Books are Five star rated</div>
           </div>
         </div>
-      </Marquee>
+      </Marquee> */}
     </div>
   );
 };

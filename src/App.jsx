@@ -12,6 +12,7 @@ import AdminHome from "./components/AdminPages/AdminHome";
 import BookDetails from "./components/BooksPage/BookDetails";
 import Favorites from "./pages/Favorites";
 import AdminBorrowedBooks from "./components/AdminPages/AdminBorrowedBooks";
+import Review from "./components/BooksPage/Review";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
@@ -83,6 +84,7 @@ const App = () => {
             { index: true, element: <Home /> },
             { path: "/books", element: <Books /> },
             { path: "/books/:bookName", element: <BookDetails /> },
+            { path: "/books/:bookName/write-review", element: <Review /> },
             { path: "/borrowedbooks", element: <BorrowedBooks /> },
             { path: "/favorites", element: <Favorites /> },
           ],
@@ -98,7 +100,6 @@ const App = () => {
   ]);
   const [loginClickState, setLoginClickState] = useState(false);
   return (
-     
     <BooksRenderContext.Provider
       value={{
         selectedBook: { selectedBook, setSelectedBook },
@@ -116,7 +117,6 @@ const App = () => {
         <RouterProvider router={router} />
       </IsLoginClicked.Provider>
     </BooksRenderContext.Provider>
-    
   );
 };
 

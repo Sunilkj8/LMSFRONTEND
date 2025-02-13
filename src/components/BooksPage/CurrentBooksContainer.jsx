@@ -25,11 +25,12 @@ const CurrentBooksContainer = ({
   // const [miniModalOpen, setMiniModalOpen] = useState(false);
   return (
     <div className="h-auto w-full   justify-center gap-10    flex flex-wrap  ">
-      
       {currentBooks.map((elem, idx) => {
         return (
-          <div className="   rounded-lg hover:scale-[1.02] hover:border-black cursor-pointer upliftDiv border border-gray-300  duration-300  overflow-hidden relative bg-white
-  hover:border h-[60vh] w-[20%] py-5 gap-2 flex flex-col">
+          <div
+            className="   rounded-2xl hover:scale-[1.02] hover:border-black cursor-pointer upliftDiv border border-gray-100  duration-300  overflow-hidden relative bg-white
+  hover:border h-[60vh] w-[20%] py-5 gap-2 flex flex-col"
+          >
             <div
               onClick={() => {
                 setSelectedBook(elem);
@@ -40,13 +41,17 @@ const CurrentBooksContainer = ({
               <img src={elem.book_image} className="h-full w-[9vw]" alt="" />
             </div>
             <div
+              
               className={` duration-300 currUpliftDiv cursor-pointer absolute   top-[30vh] z-20 bg-white
  w-full     h-[30vh]  flex    flex-col justify-center  px-10 text-left`}
             >
               <div className="font-thin    tracking-widest text-[#F31A52]">
                 Hardcover
               </div>
-              <div className=" max-h-[50%] overflow-hidden tracking-wide">
+              <div onClick={() => {
+                setSelectedBook(elem);
+                navigate(`/books/${elem.book_name}`);
+              }} className=" max-h-[50%] overflow-hidden tracking-wide">
                 {elem.book_name}
               </div>
               <div className=" text-gray-500 tracking-wide">

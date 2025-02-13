@@ -97,7 +97,7 @@ const Banner = () => {
   });
   return (
     <>
-      <div className=" blockElem mt-24 rounded-3xl  bg-[#000000]    max-w-[94vw] overflow-hidden  flex w-screen-2xl mx-auto  h-[100vh]     ">
+      <div className=" blockElem mt-2 rounded-3xl  bg-[#000000]    max-w-[94vw] overflow-hidden  flex w-screen-2xl mx-auto  h-[100vh]     ">
         <div className="absolute w-full h-full bannerBg opacity-50"></div>
         <div className=" relative   w-[100%] flex items-center justify-center flex-col gap-5 ">
           <animated.div

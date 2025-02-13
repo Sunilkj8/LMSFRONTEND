@@ -55,8 +55,8 @@ export default function NestedModal({ selectedBook }) {
 
   return (
     <div>
-      <div className="bg-[white]  text-black flex items-center px-3   shadow-md gap-5 rounded-md h-[7vh] cursor-pointer hover:scale-[1.01] duration-100">
-        <Button onClick={handleOpen}>
+      <div className="bg-blue-300  text-black flex items-center px-3   shadow-md gap-5 rounded-md h-[7vh] cursor-pointer hover:scale-[1.01] duration-100">
+        <Button  onClick={handleOpen}>
           <span className="text-black text-lg flex justify-center items-center capitalize  gap-3">
             Borrow Book <img src={heart} className="h-[5vh]" alt="" />
           </span>

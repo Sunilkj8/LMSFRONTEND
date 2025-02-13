@@ -15,7 +15,7 @@ const Favorites = () => {
       {" "}
       {favoriteBooks.map((elem, idx) => {
         return (
-          <div className="shadow-sm rounded-sm hover:shadow-2xl hover:border-black cursor-pointer upliftDiv border border-gray-300   overflow-hidden relative bg-[white] hover:border h-[60vh] w-[20%]  py-5 gap-2 flex flex-col">
+          <div className="shadow-sm rounded-2xl hover:shadow-2xl  hover:border-black cursor-pointer upliftDiv border border-gray-300   overflow-hidden relative bg-[white] hover:border h-[60vh] w-[20%]  py-5 gap-2 duration-300 flex flex-col">
             <div
               onClick={() => {
                 setSelectedBook(elem);

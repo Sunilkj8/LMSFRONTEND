@@ -59,18 +59,18 @@ const CategoriesShowCase = () => {
      },
   ];
   return (
-    <div className="h-[60vh] flex justify-center gap-14 items-center">
+    <div className="h-[80vh] blockElem flex justify-center gap-14 items-center">
       {categoriesArr.map((elem) => {
         return (
           <div className=" relative flex items-center ">
-            <div className="translate-x-0 translate-y-0  hover:translate-x-[-10px] hover:translate-y-[-10px] duration-300 absolute bg-[#000] text-white    border-black h-[25vh] items-center w-[15.3vw]  rounded-md  gap-2  shadow-lg justify-center flex flex-col">
-              <div>{elem.icon}</div>
+            <div className="group translate-x-0 translate-y-0  hover:translate-x-[-20px] hover:translate-y-[-20px] duration-300 absolute bg-[#000] text-white    border-black h-[25vh] items-center w-[15.3vw]  rounded-md  gap-2 cursor-pointer  shadow-lg justify-center flex flex-col">
+              <div className="">{elem.icon}</div>
               <span className="font-bold h-[2em]">{elem.title}</span>
              </div>
             <div
               className=" h-[25vh] w-[15.3vw] rounded-md"
               style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px,red 1px,transparent 0)`,
+                backgroundImage: `radial-gradient(circle at 1px 1px,gray 1px,transparent 0)`,
                 backgroundSize: "8px 8px",
                 backgroundRepeat: "repeat",
               }}

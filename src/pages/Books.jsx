@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { BooksRenderContext } from "../contexts/BooksRenderContext";
 import BookPopUp from "../components/Modals/BookPopUp";
 import Footer from "../components/Landing page/Footer";
+import ScrollToTop from "react-scroll-to-top";
 const Books = () => {
   const [currentCategory, setCurrentCategory] = useState();
   const [popUpState, setPopUpState] = useState(false);
@@ -53,6 +54,8 @@ const Books = () => {
           />
         </div>
       </div>
+      <ScrollToTop   className="flex items-center p-3 bg-neutral-400 justify-center" smooth />
+
       <Footer />
     </>
   );

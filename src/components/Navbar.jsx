@@ -49,11 +49,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
     <>
       {" "}
       <div
-        className={` max-w-screen-2xl container mx-auto md:px-20 px-4 fixed text-black top-0 left-0 right-0 z-50 font-medium ${
-          sticky
-            ? "sticky shadow-md bg-gray-100 duration-300 transition-all ease-in-out z-20"
-            : ""
-        }`}
+        className={` max-w-screen-2xl container mx-auto md:px-20 px-4   text-black top-0 left-0 right-0 z-50 font-medium`}
       >
         <div className="navbar   ">
           <div className="navbar-start">
@@ -105,11 +101,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
               <ul className="menu menu-horizontal px-1">
                 <li className="px-2">
                   <NavLink
-                    onClick={() => {
-                      setTimeout(() => {
-                        window.scroll(0, 0);
-                      }, 500);
-                    }}
+                    
                     to={"/"}
                   >
                     Home
@@ -117,11 +109,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                 </li>
                 <li className="px-2">
                   <NavLink
-                    onClick={() => {
-                      setTimeout(() => {
-                        window.scroll(0, 0);
-                      }, 500);
-                    }}
+                    
                     to={"/books"}
                   >
                     Books
@@ -129,11 +117,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                 </li>
                 <li className="px-2">
                   <NavLink
-                    onClick={() => {
-                      setTimeout(() => {
-                        window.scroll(0, 0);
-                      }, 500);
-                    }}
+                     
                     to={"/borrowedbooks"}
                   >
                     Borrowed Books
@@ -197,7 +181,7 @@ const Navbar = ({ inspiringBooks, setInspiringBooks, setCurrentBooks }) => {
                   )}
                 </div>
                 {profileDropDown ? (
-                  <div className=" rounded-md flex items-center flex-col    bg-black text-white h-[25vh] absolute gap-2 top-16 w-[10rem] left-[71vw] p-2">
+                  <div className=" rounded-md flex items-center flex-col z-40    bg-black text-white h-[25vh] absolute gap-2 top-16 w-[10rem] left-[79vw] p-2">
                     <h1 className="capitalize text-xl">{username}</h1>
                     <h1 className="capitalize text-base">
                       {" "}

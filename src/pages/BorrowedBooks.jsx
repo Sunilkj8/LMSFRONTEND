@@ -3,6 +3,7 @@ import BorrowedBooksContainer from "../components/BorrowedBooksPage/BorrowedBook
 import axios from "axios";
 import { BooksRenderContext } from "../contexts/BooksRenderContext";
 import Footer from "../components/Landing page/Footer";
+import ScrollToTop from "react-scroll-to-top";
 
 const BorrowedBooks = () => {
   // const [userBorrowedBooks, setUserBorrowedBooks] = useState([]);
@@ -14,6 +15,8 @@ const BorrowedBooks = () => {
   return (
     <>
       <BorrowedBooksContainer userBorrowedBooks={borrowedBooks} />
+      <ScrollToTop   className="flex items-center p-3 bg-neutral-400 justify-center" smooth />
+
       <Footer/>
     </>
   );
