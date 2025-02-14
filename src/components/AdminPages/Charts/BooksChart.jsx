@@ -4,7 +4,13 @@ import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
 import { BooksRenderContext } from "../../../contexts/BooksRenderContext";
 
 const BooksChart = () => {
-  const { fictionalBook, selfHelpBook,programmingBook } = useContext(BooksRenderContext);
+  const {
+    fictionalBook,
+    selfHelpBook,
+    programmingBook,
+    autobiographyBook,
+    sportsBook,
+  } = useContext(BooksRenderContext);
   return (
     <div className="">
       <PieChart
@@ -26,6 +32,16 @@ const BooksChart = () => {
                 id: 2,
                 value: programmingBook.programmingBooks.length,
                 label: "Programming",
+              },
+              {
+                id: 3,
+                value: autobiographyBook.autobiographyBooks.length,
+                label: "Autobiography",
+              },
+              {
+                id: 4,
+                value: sportsBook.sportsBooks.length,
+                label: "Sports",
               },
             ],
           },

@@ -1,16 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import { IsLoginClicked } from "../contexts/LoginContext";
 import CurrentBooksContainer from "../components/BooksPage/CurrentBooksContainer";
 import Accordion from "../components/BooksPage/Accordion";
-import { Link } from "react-router-dom";
 import { BooksRenderContext } from "../contexts/BooksRenderContext";
-import BookPopUp from "../components/Modals/BookPopUp";
 import Footer from "../components/Landing page/Footer";
 import ScrollToTop from "react-scroll-to-top";
 const Books = () => {
-  const [currentCategory, setCurrentCategory] = useState();
-  const [popUpState, setPopUpState] = useState(false);
   const {
     fictionalBook,
     selfHelpBook,
@@ -21,14 +15,9 @@ const Books = () => {
     autobiographyBook,
     sportsBook,
   } = useContext(BooksRenderContext);
-  const [currBooks, setCurrBooks] = useState([]);
 
   // console.log(filteredBook.filteredBooks);
-  const { filteredBooks, setFilteredBooks } = filteredBook;
   // console.log(currentBook.currentBooks);
-
-  const { currentBooks, setCurrentBooks } =
-    useContext(BooksRenderContext).currentBook;
 
   function getCurrentBooks(books) {
     console.log(books);
@@ -59,7 +48,6 @@ const Books = () => {
           {/* <BookPopUp popUpState={popUpState} setPopUpState={setPopUpState} /> */}
           <CurrentBooksContainer
             booksToRender={24}
-            setPopUpState={setPopUpState}
             border={true}
             currentBooks={currentBook.currentBooks}
           />
