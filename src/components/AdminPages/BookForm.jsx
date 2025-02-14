@@ -96,6 +96,8 @@ const BookForm = () => {
             <option value="self help">Self Help</option>
             <option value="autobiography">Autobiography</option>
             <option value="programming">Programming</option>
+            <option value="sports">Sports</option>
+
           </select>
         </div>
 

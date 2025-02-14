@@ -40,7 +40,7 @@ const MarqueeSlider = () => {
           </div> */}
         </div>
       </Marquee>
-      {/* <Marquee speed={140} direction="right" className="h-full w-full">
+      <Marquee speed={140} direction="right" className="h-full w-full">
         <div className="ml-96 flex gap-20 justify-center items-center">
           <div className="p-4 overflow-hidden  h-full text-center flex items-center flex-col ">
             <div className="text-8xl text-center font-extrabold">
@@ -76,7 +76,7 @@ const MarqueeSlider = () => {
             <div className="text-gray-800 text-3xl text-center  ">Books are Five star rated</div>
           </div>
         </div>
-      </Marquee> */}
+      </Marquee>
     </div>
   );
 };

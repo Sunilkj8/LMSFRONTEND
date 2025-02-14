@@ -13,22 +13,35 @@ import BookDetails from "./components/BooksPage/BookDetails";
 import Favorites from "./pages/Favorites";
 import AdminBorrowedBooks from "./components/AdminPages/AdminBorrowedBooks";
 import Review from "./components/BooksPage/Review";
+import AboutUs from "./pages/AboutUs";
+import TermsandCondition from "./pages/TermsandCondition";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
   const [fictionalBooks, setFictionalBooks] = useState([]);
   const [selfHelpBooks, setSelfHelpBooks] = useState([]);
+  const [autobiographyBooks, setAutoBiographyBooks] = useState([]);
   const [currentBooks, setCurrentBooks] = useState([]);
   const [inspiringBooks, setInspiringBooks] = useState([]);
   const [borrowedBooks, setBorrowedBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [favoriteBooks, setFavoriteBooks] = useState([]);
   const [programmingBooks, setProgrammingBooks] = useState([]);
-  // const [currentCategory, setCurrentCategory] = useState("Fictional");
+  const [currCategory, setCurrCategory] = useState("");
+  const [sportsBooks, setSportsBooks] = useState([]);
 
   const getFictionalBooks = async () => {
     const res = await axios.get("http://localhost:3001/fictionalbooks");
     setFictionalBooks(res.data);
+  };
+  const getAutoBiographyBooks = async () => {
+    const res = await axios.get("http://localhost:3001/autobiographybooks");
+    setAutoBiographyBooks(res.data);
+  };
+
+  const getSportsBooks = async () => {
+    const res = await axios.get("http://localhost:3001/sportsbooks");
+    setSportsBooks(res.data);
   };
 
   const getSelfHelpBooks = async () => {
@@ -72,6 +85,8 @@ const App = () => {
     getUserBorrowedBooks();
     getFavoriteBooks();
     getProgrammingBooks();
+    getAutoBiographyBooks();
+    getSportsBooks();
   }, []);
 
   const router = createBrowserRouter([
@@ -87,6 +102,8 @@ const App = () => {
             { path: "/books/:bookName/write-review", element: <Review /> },
             { path: "/borrowedbooks", element: <BorrowedBooks /> },
             { path: "/favorites", element: <Favorites /> },
+            { path: "/aboutus", element: <AboutUs /> },
+            { path: "/termsandconditions", element: <TermsandCondition /> },
           ],
         }
       : {
@@ -111,6 +128,9 @@ const App = () => {
         filteredBook: { filteredBooks, setFilteredBooks },
         favoriteBook: { favoriteBooks, setFavoriteBooks },
         programmingBook: { programmingBooks, setProgrammingBooks },
+        currCategory: { currCategory, setCurrCategory },
+        autobiographyBook: { autobiographyBooks, setAutoBiographyBooks },
+        sportsBook: { sportsBooks, setSportsBooks },
       }}
     >
       <IsLoginClicked.Provider value={{ loginClickState, setLoginClickState }}>

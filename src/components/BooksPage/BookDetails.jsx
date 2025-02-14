@@ -6,6 +6,7 @@ import NestedModal from "../Modals/BookPopUp";
 import { Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Audio, Comment } from "react-loader-spinner";
 
 const BookDetails = () => {
   const { selectedBook, setSelectedBook } =
@@ -20,7 +21,17 @@ const BookDetails = () => {
   };
 
   useEffect(() => {
-    getReviews();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    const rvInterval = setInterval(() => {
+      getReviews();
+    }, 2000);
+
+    return () => {
+      clearInterval(rvInterval);
+    };
   }, []);
 
   // console.log(currReviews);
@@ -47,7 +58,7 @@ const BookDetails = () => {
             <div className="text-2xl text-gray-600 capitalize font-semibold">
               ~ {selectedBook.book_author}
             </div>
-            <div className="text-xl text-center  capitalize font-semibold">
+            <div className="text-lg font-thin    capitalize ">
               {selectedBook.book_description}
             </div>
             <div className="  flex justify-center items-center h-auto     gap-10   ">
@@ -72,7 +83,25 @@ const BookDetails = () => {
         </div>
 
         <div className="flex flex-col absolute  p-10  left-[35vw]  top-[80vh] gap-14   ">
+          <div className="mt-[50vh] ml-[15vw] ">
+            {currReviews.length == 0 ? (
+              <Comment
+                visible={true}
+                height="150"
+                width="150"
+                ariaLabel="comment-loading"
+                wrapperStyle={{}}
+                wrapperClass="comment-wrapper"
+                color="#fff"
+                backgroundColor="#000"
+              />
+            ) : (
+              ""
+            )}
+          </div>
           {currReviews.map((elem) => {
+            //  console.log(elem);
+
             if (elem.book_id == selectedBook.book_id)
               return (
                 <div className="  p-10 shadow-xl rounded-3xl border-black w-[50vw] font-semibold flex flex-col gap-5 text-white bg-black">
@@ -91,8 +120,8 @@ const BookDetails = () => {
                         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                       />
                     </svg>
-                      {elem.username}
-                   </div>
+                    {elem.username}
+                  </div>
                   <div className="text-2xl">{elem.review_headline}</div>
                   <div className="font-thin">{elem.review_description}</div>
                 </div>

@@ -11,8 +11,16 @@ import ScrollToTop from "react-scroll-to-top";
 const Books = () => {
   const [currentCategory, setCurrentCategory] = useState();
   const [popUpState, setPopUpState] = useState(false);
-  const { fictionalBook, selfHelpBook, currentBook, filteredBook } =
-    useContext(BooksRenderContext);
+  const {
+    fictionalBook,
+    selfHelpBook,
+    programmingBook,
+    currentBook,
+    filteredBook,
+    inspiringBook,
+    autobiographyBook,
+    sportsBook,
+  } = useContext(BooksRenderContext);
   const [currBooks, setCurrBooks] = useState([]);
 
   // console.log(filteredBook.filteredBooks);
@@ -27,10 +35,16 @@ const Books = () => {
 
     if (books == "Fictional") {
       currentBook.setCurrentBooks(fictionalBook.fictionalBooks);
-      setCurrentCategory("Fictional");
     } else if (books == "Self Help") {
       currentBook.setCurrentBooks(selfHelpBook.selfHelpBooks);
-      setCurrentCategory("Self Help");
+    } else if (books == "Programming") {
+      currentBook.setCurrentBooks(programmingBook.programmingBooks);
+    } else if (books == "All") {
+      currentBook.setCurrentBooks(inspiringBook.inspiringBooks);
+    } else if (books == "Autobiography") {
+      currentBook.setCurrentBooks(autobiographyBook.autobiographyBooks);
+    } else if (books == "Sports") {
+      currentBook.setCurrentBooks(sportsBook.sportsBooks);
     }
   }
 
@@ -39,9 +53,6 @@ const Books = () => {
       <div className=" flex h-auto mt-[5vh] w-[99vw] flex-col   px-[3vw] py-[7vh] gap-10">
         <div className="flex justify-between items-center ">
           <Accordion getCurrentBooks={getCurrentBooks} />
-          <div to={""} className=" text-3xl capitalize  text-center   ">
-            Showing {currentCategory ? currentCategory : "all "} books
-          </div>
         </div>
 
         <div className="h-auto w-full p-3">
@@ -54,7 +65,10 @@ const Books = () => {
           />
         </div>
       </div>
-      <ScrollToTop   className="flex items-center p-3 bg-neutral-400 justify-center" smooth />
+      <ScrollToTop
+        className="flex items-center p-3 bg-neutral-400 justify-center"
+        smooth
+      />
 
       <Footer />
     </>
