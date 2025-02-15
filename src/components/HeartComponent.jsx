@@ -15,8 +15,7 @@ export default function AniHeart({ bookName }) {
   function checkIsFav() {
     inspiringBooks.forEach((elem) => {
       if (elem.book_name == bookName && elem.isfavourite == true) {
-        // console.log(true);
-        setIsFav(true);
+         setIsFav(true);
       }
     });
   }

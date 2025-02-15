@@ -7,7 +7,7 @@ const InspiringBook = () => {
   const [isClick, setClick] = useState(false);
 
   return (
-    <div className="  blockElem  h-[100vh] w-[99vw] flex justify-center items-center">
+    <div className="  blockElem  h-[200vh] w-[99vw] flex justify-center items-center">
       <div className="   w-full h-[100vh] max-w-[94vw] flex items-center p-10 flex-col    gap-10 ">
         <div className="text-7xl text-black  font-extrabold text-center ">
           Rate and Review Your Favorite Reads
