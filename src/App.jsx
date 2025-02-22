@@ -15,6 +15,8 @@ import AdminBorrowedBooks from "./components/AdminPages/AdminBorrowedBooks";
 import Review from "./components/BooksPage/Review";
 import AboutUs from "./pages/AboutUs";
 import TermsandCondition from "./pages/TermsandCondition";
+import { UsersInfoContext } from "./contexts/UsersInfoContext";
+import CurrentUser from "./components/AdminPages/CurrentUser";
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState([]);
@@ -82,7 +84,11 @@ const App = () => {
     getFictionalBooks();
     getSelfHelpBooks();
     getInspiringBooks();
-    getUserBorrowedBooks();
+    if (localStorage.getItem("usertype") == "admin") {
+      console.log("admin logged in");
+    } else {
+      getUserBorrowedBooks();
+    }
     getFavoriteBooks();
     getProgrammingBooks();
     getAutoBiographyBooks();
@@ -112,31 +118,36 @@ const App = () => {
           children: [
             { index: true, element: <AdminHome /> },
             { path: "adborrowedbooks", element: <AdminBorrowedBooks /> },
+            { path: "adborrowedbooks/:username", element: <CurrentUser /> },
           ],
         },
   ]);
   const [loginClickState, setLoginClickState] = useState(false);
   return (
-    <BooksRenderContext.Provider
-      value={{
-        selectedBook: { selectedBook, setSelectedBook },
-        fictionalBook: { fictionalBooks, setFictionalBooks },
-        selfHelpBook: { selfHelpBooks, setSelfHelpBooks },
-        currentBook: { currentBooks, setCurrentBooks },
-        inspiringBook: { inspiringBooks, setInspiringBooks },
-        borrowedBook: { borrowedBooks, setBorrowedBooks },
-        filteredBook: { filteredBooks, setFilteredBooks },
-        favoriteBook: { favoriteBooks, setFavoriteBooks },
-        programmingBook: { programmingBooks, setProgrammingBooks },
-        currCategory: { currCategory, setCurrCategory },
-        autobiographyBook: { autobiographyBooks, setAutoBiographyBooks },
-        sportsBook: { sportsBooks, setSportsBooks },
-      }}
-    >
-      <IsLoginClicked.Provider value={{ loginClickState, setLoginClickState }}>
-        <RouterProvider router={router} />
-      </IsLoginClicked.Provider>
-    </BooksRenderContext.Provider>
+    <UsersInfoContext.Provider>
+      <BooksRenderContext.Provider
+        value={{
+          selectedBook: { selectedBook, setSelectedBook },
+          fictionalBook: { fictionalBooks, setFictionalBooks },
+          selfHelpBook: { selfHelpBooks, setSelfHelpBooks },
+          currentBook: { currentBooks, setCurrentBooks },
+          inspiringBook: { inspiringBooks, setInspiringBooks },
+          borrowedBook: { borrowedBooks, setBorrowedBooks },
+          filteredBook: { filteredBooks, setFilteredBooks },
+          favoriteBook: { favoriteBooks, setFavoriteBooks },
+          programmingBook: { programmingBooks, setProgrammingBooks },
+          currCategory: { currCategory, setCurrCategory },
+          autobiographyBook: { autobiographyBooks, setAutoBiographyBooks },
+          sportsBook: { sportsBooks, setSportsBooks },
+        }}
+      >
+        <IsLoginClicked.Provider
+          value={{ loginClickState, setLoginClickState }}
+        >
+          <RouterProvider router={router} />
+        </IsLoginClicked.Provider>
+      </BooksRenderContext.Provider>
+    </UsersInfoContext.Provider>
   );
 };
 

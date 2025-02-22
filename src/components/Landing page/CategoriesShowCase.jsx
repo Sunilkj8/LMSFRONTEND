@@ -82,7 +82,7 @@ const CategoriesShowCase = () => {
     },
   ];
   return (
-    <div className="h-[200vh]  blockElem flex justify-center gap-14 items-center">
+    <div className="h-[100vh]  blockElem flex justify-center gap-14 items-center">
       {categoriesArr.map((elem) => {
         return (
           <div

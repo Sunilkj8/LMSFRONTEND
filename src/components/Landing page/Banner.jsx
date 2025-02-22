@@ -1,24 +1,8 @@
 import React, { useState } from "react";
 // import animatedLibraryImage from "../assets/animatedLibraryImage.jpeg";
-import bannerImage from "../../assets/bannerImage.png";
-import atomicHabits from "../../assets/Atomic_habits.jpg";
-import crackingTheCodingInterview from "../../assets/crackingTheCodingInterview.jpg";
-import bannerImg1 from "../../assets/bannerimg1.png";
-import bannerImg2 from "../../assets/bannerImg2.png";
-import bannerImg3 from "../../assets/bannerImg3.png";
-import bannerImg4 from "../../assets/bannerImg4.png";
-import bannerImg5 from "../../assets/bannerImg5.png";
-import bannerImg6 from "../../assets/bannerImg6.png";
-import bannerImg7 from "../../assets/bannerImg7.png";
-import bannerImg8 from "../../assets/bannerImg8.png";
-import bannerImg9 from "../../assets/bannerImg9.png";
-import bannerImg10 from "../../assets/bannerImg10.png";
-import bannerImg11 from "../../assets/bannerImg11.png";
-import bannerImg12 from "../../assets/bannerImg12.png";
 
 import { useSpring, animated } from "react-spring";
 
-import { CarouselCustomArrows } from "./MainCar";
 const Banner = () => {
   const props = useSpring({
     from: {
