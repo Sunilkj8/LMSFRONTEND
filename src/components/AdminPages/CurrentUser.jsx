@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const CurrentUser = () => {
   const [currUserData, setCurrUserData] = useState([]);
@@ -34,9 +35,21 @@ const CurrentUser = () => {
             <div className="card-body bg-white">
               <h2 className="card-title">{elem.book_name}</h2>
               <p className="text-gray-500">{elem.book_author}</p>
-              <div className="card-actions justify-end">
+              <div className="card-actions justify-between">
+                <div
+                  onClick={async () => {
+                    const res = await axios.post(
+                      "http://localhost:3001/removefromborrowedbooks",
+                      { book_id: elem.book_id, user_id: elem.user_id }
+                    );
+                    toast.success(res.data);
+                  }}
+                  className="bg-black text-white p-2 rounded-md hover:text-green-200 duration-300 cursor-pointer"
+                >
+                  ✔ Mark as Returned
+                </div>
                 <div className="badge badge-outline">
-                  {elem.returnon ? elem.returnon : "no-date"}
+                  <span> {elem.returnon ? elem.returnon : "no-date"}</span>
                 </div>
               </div>
             </div>
